@@ -1,0 +1,102 @@
+{
+    "name": "SurveyMonkey",
+    "description": "SurveyMonkey is an online survey development cloud-based software as a service company, founded in 1999 by Ryan Finley.",
+    "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1573-surveymonkey.jpg",
+    "tags": [
+        "have api",
+        "polls",
+        "surveys",
+        "webhook implementations"
+    ],
+    "created": "2019-12-19",
+    "modified": "2019-12-19",
+    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/surveymonkey\/master\/apis.json",
+    "specificationVersion": "0.14",
+    "apis": [
+        {
+            "name": "SurveyMonkey",
+            "description": null,
+            "image": "http:\/\/kinlane-productions.s3.amazonaws.com\/screen-capture-api\/1573-surveymonkey.jpg",
+            "humanURL": "https:\/\/developer.surveymonkey.com",
+            "baseURL": "",
+            "tags": [],
+            "properties": [
+                {
+                    "type": "x-postman-collecction",
+                    "url": "https:\/\/raw.githubusercontent.com\/api-evangelist\/1forge\/master\/surveymonkey-postman-collection.json"
+                }
+            ]
+        }
+    ],
+    "include": [],
+    "x-common": [
+        {
+            "type": "Base",
+            "url": "http:\/\/api.surveymonkey.net\/"
+        },
+        {
+            "type": "Blog",
+            "url": "http:\/\/blog.surveymonkey.com"
+        },
+        {
+            "type": "Blog RSS",
+            "url": "http:\/\/blog.surveymonkey.com\/feed"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "http:\/\/www.crunchbase.com\/company\/surveymonkey"
+        },
+        {
+            "type": "Crunchbase",
+            "url": "https:\/\/crunchbase.com\/organization\/surveymonkey"
+        },
+        {
+            "type": "Developers",
+            "url": "https:\/\/developer.surveymonkey.com\/"
+        },
+        {
+            "type": "Email",
+            "url": "abuse@surveymonkey.com"
+        },
+        {
+            "type": "Email",
+            "url": "privacy@surveymonkey.com"
+        },
+        {
+            "type": "Email",
+            "url": "dpo@surveymonkey.com"
+        },
+        {
+            "type": "Email",
+            "url": "support@surveymonkey.com"
+        },
+        {
+            "type": "Github",
+            "url": "https:\/\/github.com\/SurveyMonkey"
+        },
+        {
+            "type": "Partners",
+            "url": "https:\/\/www.surveymonkey.com\/mp\/aboutus\/partners\/"
+        },
+        {
+            "type": "Pricing",
+            "url": "https:\/\/www.surveymonkey.com\/pricing\/upgrade\/quickview\/?ut_source=header_loggedIn"
+        },
+        {
+            "type": "Twitter",
+            "url": "https:\/\/twitter.com\/surveymonkey"
+        },
+        {
+            "type": "Webhooks",
+            "url": "https:\/\/developer.surveymonkey.com\/api\/v3\/"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/developer.surveymonkey.com"
+        },
+        {
+            "type": "Website",
+            "url": "https:\/\/surveymonkey.com\/"
+        }
+    ]
+}
