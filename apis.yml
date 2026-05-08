@@ -1,0 +1,29 @@
+aid: surveymonkey
+url: https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/main/apis.yml
+name: SurveyMonkey
+x-type: company
+description: >-
+  SurveyMonkey is a leading surveys and feedback platform with REST APIs covering surveys, responses, contacts, collectors, and analytics.
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Surveys
+  - Market Research
+  - Feedback
+  - NPS
+  - Forms
+created: '2026-05-08'
+modified: '2026-05-08'
+specificationVersion: '0.19'
+apis: []
+common:
+  - type: Website
+    url: https://www.surveymonkey.com/
+  - type: Plans
+    url: plans/surveymonkey-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/surveymonkey-rate-limits.yml
+  - type: FinOps
+    url: finops/surveymonkey-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
