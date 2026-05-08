@@ -5,7 +5,7 @@ provider: SurveyMonkey
 providerId: surveymonkey
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Surveys
 - Market Research
@@ -15,10 +15,18 @@ tags:
 - FinOps
 - Cost Management
 - FOCUS
-description: FOCUS-aligned FinOps placeholder for SurveyMonkey. Pipeline will replace with real billing details.
-notes: Initial scaffold — billing model has not yet been reconciled.
+description: >-
+  FOCUS-aligned FinOps profile for SurveyMonkey. Billing is per-user-per-month
+  on the team plans (Advantage/Premier) with annual response bundles, plus
+  $0.15/response overage. Enterprise contracts are negotiated. SurveyMonkey
+  Audience (paid panel) is metered separately.
+notes: >-
+  Workgroups in Enterprise can be used to allocate cost by business unit;
+  billing is annual and invoiced in USD. Public-app daily 500K request quota
+  has no incremental cost as long as it stays within the API rate-limit
+  schedule.
 sources:
-- https://www.surveymonkey.com/
+- https://www.surveymonkey.com/pricing/
 - https://focus.finops.org/focus-specification/v1-3/
 alignedWith:
   framework: FinOps Foundation Framework
@@ -27,10 +35,10 @@ alignedWith:
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 publisherName: SurveyMonkey
-serviceCategory: Surveys
+serviceCategory: Surveys / Feedback
 billingModel:
-  pricingCategory: To Be Reconciled
-  billingFrequency: Monthly
+  pricingCategory: Subscription + Usage (overage)
+  billingFrequency: Annual
   billingCurrency: USD
   chargeCategories:
   - Usage
@@ -43,24 +51,45 @@ focusColumns:
   PublisherName: SurveyMonkey
   InvoiceIssuerName: SurveyMonkey
   BillingCurrency: USD
-  ChargeCategory: Usage
+  ChargeCategory: Purchase
+  PricingUnit: user-month / response
 meters:
-- name: api_usage
-  description: Catch-all meter pending reconciliation.
-  unit: varies
+- name: seats
+  description: Active billable seats per plan tier.
+  unit: user-month
+  aggregation: max
+  dimensions:
+  - workgroup
+  - tier
+- name: responses
+  description: Survey responses counted against the annual bundle.
+  unit: response
   aggregation: sum
   dimensions:
-  - account
-  - resource
+  - workgroup
+  - survey
+- name: response_overage
+  description: Responses above the annual bundle billed at $0.15 each.
+  unit: response
+  aggregation: sum
+  dimensions:
+  - workgroup
+- name: audience_panel
+  description: SurveyMonkey Audience paid-panel completes.
+  unit: completion
+  aggregation: sum
+  dimensions:
+  - workgroup
+  - survey
 principles:
 - name: Visibility
-  description: Pull provider invoices or usage exports until a self-serve usage feed is documented.
+  description: Use the SurveyMonkey admin Usage page; export response counts per survey for chargeback.
 - name: Allocation
-  description: Tag invoice line items to consuming business units in your FinOps store.
+  description: Workgroups for Enterprise; use survey naming conventions otherwise.
 - name: Optimization
-  description: Levers depend on the provider's billing model; review at renewal once reconciled.
+  description: Right-size to Advantage vs Premier annually; consolidate seats; throttle long-running data exports to avoid unnecessary recompute.
 - name: Accountability
-  description: Assign a contract owner to review billing against negotiated terms.
+  description: Assign workgroup owners; alert when annual response burn-down exceeds plan trajectory.
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

@@ -3,7 +3,10 @@ url: https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/ma
 name: SurveyMonkey
 x-type: company
 description: >-
-  SurveyMonkey is a leading surveys and feedback platform with REST APIs covering surveys, responses, contacts, collectors, and analytics.
+  SurveyMonkey is a leading surveys and feedback platform. The SurveyMonkey
+  API v3 is a REST API exposing surveys, pages, questions, collectors, contacts,
+  responses, webhooks, users, teams, groups and benchmarks. Authenticated via
+  OAuth 2.0 with scoped permissions.
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 tags:
   - Surveys
@@ -11,13 +14,46 @@ tags:
   - Feedback
   - NPS
   - Forms
+  - OAuth
 created: '2026-05-08'
 modified: '2026-05-08'
 specificationVersion: '0.19'
-apis: []
+apis:
+  - aid: surveymonkey:rest-v3
+    name: SurveyMonkey API v3
+    description: >-
+      REST/JSON API for the SurveyMonkey platform — surveys, pages, questions,
+      collectors, contacts, responses, webhooks, users, teams. Three-step
+      OAuth 2.0 flow; scope-based permissions; some scopes require paid plans.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://api.surveymonkey.com/v3/docs
+    baseURL: https://api.surveymonkey.com/v3
+    tags:
+      - REST
+      - OAuth 2.0
+      - Surveys
+      - Responses
+      - Webhooks
+    properties:
+      - type: Documentation
+        url: https://api.surveymonkey.com/v3/docs
+      - type: Authentication
+        url: https://api.surveymonkey.com/v3/docs#authentication
+      - type: Webhooks
+        url: https://api.surveymonkey.com/v3/docs/webhooks
+      - type: SDK
+        url: https://github.com/SurveyMonkey
 common:
   - type: Website
     url: https://www.surveymonkey.com/
+  - type: Documentation
+    url: https://api.surveymonkey.com/v3/docs
+  - type: Pricing
+    url: https://www.surveymonkey.com/pricing/
+  - type: GitHub
+    url: https://github.com/SurveyMonkey
+  - type: StatusPage
+    url: https://status.surveymonkey.com/
   - type: Plans
     url: plans/surveymonkey-plans-pricing.yml
   - type: RateLimits

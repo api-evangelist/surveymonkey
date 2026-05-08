@@ -5,7 +5,7 @@ provider: SurveyMonkey
 providerId: surveymonkey
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Surveys
 - Market Research
@@ -13,29 +13,118 @@ tags:
 - NPS
 - Forms
 - Plans
-description: Placeholder plans/pricing artifact for SurveyMonkey. Replace with real published pricing once
-  the pipeline researches the provider's plans page.
-notes: Initial scaffold — plans/pricing have not yet been reconciled.
+- Pricing
+description: >-
+  SurveyMonkey sells team plans (Team Advantage / Team Premier) tiered by per-user
+  per-month price with annual response bundles, an Enterprise plan, and a
+  separate set of individual subscriber plans. Additional responses cost
+  $0.15/response above the annual bundle.
+notes: >-
+  Pricing reflects public surveymonkey.com/pricing values as of 2026-05-08.
+  Some API scopes require Advantage / Premier / Enterprise plans (e.g. detailed
+  response data, non-weblink collectors).
 sources:
-- https://www.surveymonkey.com/
+- https://www.surveymonkey.com/pricing/
+- https://api.surveymonkey.com/v3/docs#scopes
 plans:
-- id: surveymonkey-default
-  name: To Be Reconciled
-  type: enterprise
-  description: Initial scaffold; replace with provider plan tiers once pricing is reconciled.
+- id: surveymonkey-team-advantage
+  name: Team Advantage
+  type: subscription
+  description: $30/user/month (billed annually, min 3 users); 50,000 responses/year included.
   entries:
-  - label: API Access
-    name: api_access
+  - label: Per-user
+    name: per_user
     type: flat
-    metric: varies
+    metric: user-month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 30
+    currency: USD
+    userMultiplied: true
+  - label: Included annual responses
+    name: included_responses
+    type: tier
+    metric: responses/year
+    limit: 50000
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: surveymonkey-team-premier
+  name: Team Premier
+  type: subscription
+  description: $92/user/month (billed annually, min 3 users); 100,000 responses/year included.
+  entries:
+  - label: Per-user
+    name: per_user
+    type: flat
+    metric: user-month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: 92
+    currency: USD
+    userMultiplied: true
+  - label: Included annual responses
+    name: included_responses
+    type: tier
+    metric: responses/year
+    limit: 100000
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: 0
+    userMultiplied: false
+- id: surveymonkey-enterprise
+  name: Enterprise
+  type: enterprise
+  description: Custom pricing; flexible response limits; admin tools, workgroups, premium onboarding.
+  entries:
+  - label: Custom contract
+    name: enterprise_contract
+    type: flat
+    metric: contract
+    limit: -1
+    timeFrame: annual
+    geo: global
+    unit: 1
+    price: contact sales
+    userMultiplied: false
+- id: surveymonkey-individual
+  name: Individual Plans
+  type: subscription
+  description: Per-person plans (Standard Monthly, Advantage Annual, Premier Annual). Pricing varies; see surveymonkey.com.
+  entries:
+  - label: Individual plan
+    name: individual_plan
+    type: flat
+    metric: month
+    limit: -1
+    timeFrame: month
+    geo: global
+    unit: 1
+    price: see https://www.surveymonkey.com/pricing/
+    userMultiplied: false
+- id: surveymonkey-overage
+  name: Additional responses (overage)
+  type: addOn
+  description: $0.15/response above the annual bundle.
+  entries:
+  - label: Per response overage
+    name: response_overage
+    type: usage
+    metric: response
     limit: -1
     timeFrame: usage
     geo: global
     unit: 1
-    price: see https://www.surveymonkey.com/
+    price: 0.15
+    currency: USD
     userMultiplied: false
-  elements:
-  - name: Pending Reconciliation
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com

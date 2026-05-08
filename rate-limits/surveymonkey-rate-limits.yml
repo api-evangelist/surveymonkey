@@ -5,7 +5,7 @@ provider: SurveyMonkey
 providerId: surveymonkey
 created: '2026-05-08'
 modified: '2026-05-08'
-reconciled: false
+reconciled: true
 tags:
 - Surveys
 - Market Research
@@ -15,21 +15,51 @@ tags:
 - Rate Limiting
 - Quotas
 - Throttling
-description: Placeholder rate-limit artifact for SurveyMonkey. Replace with real limits once researched.
-notes: Initial scaffold — limits have not yet been reconciled.
+description: >-
+  SurveyMonkey API v3 rate limits depend on the application stage. Draft and
+  Private apps are limited to 120 requests/minute and a daily ceiling
+  starting at 500 calls/day. Public apps published to the SurveyMonkey App
+  Directory can make up to 500,000 requests/day. 429 responses are returned
+  when limits are exceeded.
+notes: >-
+  Apps must be deployed within 90 days of registration. Public apps require
+  SurveyMonkey review.
 sources:
-- https://www.surveymonkey.com/
+- https://api.surveymonkey.com/v3/docs#rate-limits
+- https://api.surveymonkey.com/v3/docs#authentication
 responseCodes:
   throttled: 429
+headers:
+- name: X-Ratelimit-App-Global-Minute-Limit
+  description: Per-minute global app cap.
+- name: X-Ratelimit-App-Global-Minute-Remaining
+  description: Calls remaining this minute.
+- name: X-Ratelimit-App-Global-Day-Limit
+  description: Per-day global app cap.
+- name: X-Ratelimit-App-Global-Day-Remaining
+  description: Calls remaining today.
 limits:
-- name: Default
-  scope: account
-  metric: varies
-  limit: see provider documentation
-  notes: Pending reconciliation.
+- name: Draft / Private app — per minute
+  scope: app
+  metric: requests
+  limit: 120
+  timeFrame: 1m
+- name: Draft / Private app — per day
+  scope: app
+  metric: requests
+  limit: 500
+  timeFrame: 1d
+  notes: Can be raised after deployment.
+- name: Public app — per day
+  scope: app
+  metric: requests
+  limit: 500000
+  timeFrame: 1d
 policies:
 - name: Backoff Strategy
-  description: Clients should implement exponential backoff with jitter and honor any Retry-After header.
+  description: Honor 429 retry hints and inspect X-Ratelimit-* headers for available capacity.
+- name: OAuth scopes
+  description: Some scopes require paid plans (Advantage / Premier / Enterprise).
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
