@@ -1,7 +1,7 @@
 aid: surveymonkey
 url: https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/main/apis.yml
 name: SurveyMonkey
-x-type: company
+kind: company
 description: >-
   SurveyMonkey is a leading surveys and feedback platform. The SurveyMonkey
   API v3 is a REST API exposing surveys, pages, questions, collectors, contacts,
