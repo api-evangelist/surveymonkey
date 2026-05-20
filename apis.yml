@@ -44,6 +44,8 @@ apis:
       - type: SDK
         url: https://github.com/SurveyMonkey
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/surveymonkey
   - type: Website
     url: https://www.surveymonkey.com/
   - type: Documentation
