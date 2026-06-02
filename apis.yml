@@ -16,7 +16,7 @@ tags:
   - Forms
   - OAuth
 created: '2026-05-08'
-modified: '2026-05-08'
+modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
   - aid: surveymonkey:rest-v3
@@ -40,7 +40,11 @@ apis:
       - type: Authentication
         url: https://api.surveymonkey.com/v3/docs#authentication
       - type: Webhooks
-        url: https://api.surveymonkey.com/v3/docs/webhooks
+        url: https://api.surveymonkey.com/v3/docs#api-endpoint-webhooks
+      - type: OpenAPI
+        url: openapi/surveymonkey-openapi.yml
+      - type: AsyncAPI
+        url: asyncapi/surveymonkey-asyncapi.yml
       - type: SDK
         url: https://github.com/SurveyMonkey
 common:

@@ -1,0 +1,766 @@
+asyncapi: '2.6.0'
+id: 'urn:com:surveymonkey:webhooks'
+info:
+  title: SurveyMonkey Webhooks
+  version: '1.0.0'
+  description: >-
+    AsyncAPI 2.6 description of the SurveyMonkey v3 webhook surface. SurveyMonkey
+    delivers events as HTTP POST requests to a `subscription_url` that the consumer
+    registers via the REST endpoint `POST /v3/webhooks`. Every callback carries
+    two verification headers — `Sm-Apikey` (the application Client ID / API key)
+    and `Sm-Signature` (a base64-encoded HMAC-SHA1 digest computed over the raw
+    request body using the key `<client_id>&<api_secret>`). The `Content-Type` of
+    each callback follows the pattern
+    `application/vnd.surveymonkey.<object_type>.v1+json`.
+    This document is sourced directly from the SurveyMonkey API documentation at
+    https://api.surveymonkey.com/v3/docs and is intended for consumer-side
+    modelling of inbound webhook traffic.
+  contact:
+    name: API Evangelist
+    url: https://apievangelist.com
+    email: kin@apievangelist.com
+  license:
+    name: SurveyMonkey API Terms of Use
+    url: https://www.surveymonkey.com/mp/policy/api-terms-of-use/
+  x-apis-json:
+    aid: surveymonkey:asyncapi-webhooks
+    humanURL: https://api.surveymonkey.com/v3/docs#webhooks
+defaultContentType: application/json
+servers:
+  subscriber:
+    url: '{subscription_url}'
+    protocol: https
+    description: >-
+      The consumer-hosted HTTPS endpoint registered as `subscription_url` on a
+      SurveyMonkey webhook. SurveyMonkey POSTs callback payloads to this URL.
+    variables:
+      subscription_url:
+        description: The fully-qualified HTTPS URL the consumer registered with SurveyMonkey.
+        default: https://example.com/webhooks/surveymonkey
+channels:
+  webhook/response_created:
+    description: >-
+      Fires when a respondent begins a survey response. Registered with
+      `event_type=response_created` and an `object_type` of `survey` or
+      `collector`.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveResponseCreated
+      summary: Receive a response_created callback.
+      bindings:
+        http:
+          type: request
+          method: POST
+          bindingVersion: '0.3.0'
+      message:
+        $ref: '#/components/messages/ResponseCreatedEvent'
+  webhook/response_updated:
+    description: >-
+      Fires when a survey response is updated. One event is emitted per page of
+      the survey.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveResponseUpdated
+      summary: Receive a response_updated callback.
+      message:
+        $ref: '#/components/messages/ResponseUpdatedEvent'
+  webhook/response_completed:
+    description: Fires when a survey response is completed.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveResponseCompleted
+      summary: Receive a response_completed callback.
+      message:
+        $ref: '#/components/messages/ResponseCompletedEvent'
+  webhook/response_disqualified:
+    description: Fires when a survey response is disqualified.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveResponseDisqualified
+      summary: Receive a response_disqualified callback.
+      message:
+        $ref: '#/components/messages/ResponseDisqualifiedEvent'
+  webhook/response_overquota:
+    description: Fires when a response exceeds a survey's quota.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveResponseOverquota
+      summary: Receive a response_overquota callback.
+      message:
+        $ref: '#/components/messages/ResponseOverquotaEvent'
+  webhook/response_deleted:
+    description: Fires when a response is deleted.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveResponseDeleted
+      summary: Receive a response_deleted callback.
+      message:
+        $ref: '#/components/messages/ResponseDeletedEvent'
+  webhook/collector_created:
+    description: >-
+      Fires when a collector is created. NOTE: per SurveyMonkey docs, do not set
+      `object_type` to `collector` when subscribing to `collector_created`.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveCollectorCreated
+      summary: Receive a collector_created callback.
+      message:
+        $ref: '#/components/messages/CollectorCreatedEvent'
+  webhook/collector_updated:
+    description: Fires when a collector is updated.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveCollectorUpdated
+      summary: Receive a collector_updated callback.
+      message:
+        $ref: '#/components/messages/CollectorUpdatedEvent'
+  webhook/collector_deleted:
+    description: Fires when a collector is deleted.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveCollectorDeleted
+      summary: Receive a collector_deleted callback.
+      message:
+        $ref: '#/components/messages/CollectorDeletedEvent'
+  webhook/survey_created:
+    description: >-
+      Fires when a survey is created. `object_type` is optional for this event;
+      if provided it must be `survey`.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveSurveyCreated
+      summary: Receive a survey_created callback.
+      message:
+        $ref: '#/components/messages/SurveyCreatedEvent'
+  webhook/survey_updated:
+    description: Fires when a survey is updated. Requires `object_type=survey`.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveSurveyUpdated
+      summary: Receive a survey_updated callback.
+      message:
+        $ref: '#/components/messages/SurveyUpdatedEvent'
+  webhook/survey_deleted:
+    description: Fires when a survey is deleted. Requires `object_type=survey`.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveSurveyDeleted
+      summary: Receive a survey_deleted callback.
+      message:
+        $ref: '#/components/messages/SurveyDeletedEvent'
+  webhook/app_installed:
+    description: >-
+      Fires when the application is installed. Used with `object_type=app`.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveAppInstalled
+      summary: Receive an app_installed callback.
+      message:
+        $ref: '#/components/messages/AppInstalledEvent'
+  webhook/app_uninstalled:
+    description: >-
+      Fires when the application is uninstalled. Used with `object_type=app`.
+    bindings:
+      http:
+        type: request
+        method: POST
+        bindingVersion: '0.3.0'
+    subscribe:
+      operationId: receiveAppUninstalled
+      summary: Receive an app_uninstalled callback.
+      message:
+        $ref: '#/components/messages/AppUninstalledEvent'
+components:
+  messageTraits:
+    SurveyMonkeyCallback:
+      headers:
+        type: object
+        required:
+          - Sm-Apikey
+          - Sm-Signature
+          - Content-Type
+        properties:
+          Sm-Apikey:
+            type: string
+            description: >-
+              The application Client ID (or legacy API key) that owns the
+              webhook subscription. Used together with the application's API
+              secret to verify the `Sm-Signature` header.
+          Sm-Signature:
+            type: string
+            description: >-
+              Base64-encoded HMAC-SHA1 digest of the exact raw request body.
+              The HMAC key is the UTF-8 string `<client_id>&<api_secret>`.
+              Consumers MUST validate this header using a constant-time
+              comparison (e.g. `hmac.compare_digest` or `crypto.timingSafeEqual`).
+          Content-Type:
+            type: string
+            description: >-
+              Follows the pattern
+              `application/vnd.surveymonkey.<object_type>.v1+json` — for
+              example `application/vnd.surveymonkey.response.v1+json`.
+            pattern: '^application/vnd\.surveymonkey\.[a-z_]+\.v1\+json$'
+            examples:
+              - application/vnd.surveymonkey.response.v1+json
+              - application/vnd.surveymonkey.survey.v1+json
+              - application/vnd.surveymonkey.collector.v1+json
+      bindings:
+        http:
+          headers:
+            type: object
+            properties:
+              Sm-Apikey:
+                type: string
+              Sm-Signature:
+                type: string
+          bindingVersion: '0.3.0'
+  messages:
+    ResponseCreatedEvent:
+      name: ResponseCreatedEvent
+      title: Response Created
+      summary: A respondent has begun a survey response.
+      contentType: application/vnd.surveymonkey.response.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: response_created
+              object_type:
+                const: response
+              resources:
+                $ref: '#/components/schemas/ResponseResources'
+      examples:
+        - name: example
+          payload:
+            name: My Webhook
+            filter_type: collector
+            filter_id: '123456789'
+            event_type: response_created
+            event_id: '123456789'
+            object_type: response
+            object_id: '123456'
+            event_datetime: '2026-05-30T12:00:00+00:00'
+            resources:
+              respondent_id: '123456789'
+              recipient_id: '123456789'
+              collector_id: '123456789'
+              survey_id: '123456789'
+              user_id: '123456789'
+    ResponseUpdatedEvent:
+      name: ResponseUpdatedEvent
+      title: Response Updated
+      summary: A survey response was updated (fires once per page of the survey).
+      contentType: application/vnd.surveymonkey.response.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: response_updated
+              object_type:
+                const: response
+              resources:
+                $ref: '#/components/schemas/ResponseResources'
+    ResponseCompletedEvent:
+      name: ResponseCompletedEvent
+      title: Response Completed
+      summary: A survey response was completed.
+      contentType: application/vnd.surveymonkey.response.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: response_completed
+              object_type:
+                const: response
+              resources:
+                $ref: '#/components/schemas/ResponseResources'
+      examples:
+        - name: collector-event-data
+          summary: Example Collector Event Data (from SurveyMonkey docs).
+          payload:
+            name: My Webhook
+            filter_type: survey
+            filter_id: '123456789'
+            event_type: response_completed
+            event_id: '123456789'
+            object_type: response
+            object_id: '123456'
+            event_datetime: '2016-01-01T21:56:31.182613+00:00'
+            resources:
+              collector_id: '123456789'
+              survey_id: '123456789'
+              user_id: '123456789'
+        - name: response-event-data
+          summary: Example Response Event Data (from SurveyMonkey docs).
+          payload:
+            name: My Webhook
+            filter_type: collector
+            filter_id: '123456789'
+            event_type: response_completed
+            event_id: '123456789'
+            object_type: response
+            object_id: '123456'
+            event_datetime: '2016-01-01T21:56:31.182613+00:00'
+            resources:
+              respondent_id: '123456789'
+              recipient_id: '123456789'
+              collector_id: '123456789'
+              survey_id: '123456789'
+              user_id: '123456789'
+    ResponseDisqualifiedEvent:
+      name: ResponseDisqualifiedEvent
+      title: Response Disqualified
+      summary: A survey response was disqualified.
+      contentType: application/vnd.surveymonkey.response.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: response_disqualified
+              object_type:
+                const: response
+              resources:
+                $ref: '#/components/schemas/ResponseResources'
+    ResponseOverquotaEvent:
+      name: ResponseOverquotaEvent
+      title: Response Over Quota
+      summary: A response exceeded the survey's quota.
+      contentType: application/vnd.surveymonkey.response.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: response_overquota
+              object_type:
+                const: response
+              resources:
+                $ref: '#/components/schemas/ResponseResources'
+    ResponseDeletedEvent:
+      name: ResponseDeletedEvent
+      title: Response Deleted
+      summary: A response was deleted.
+      contentType: application/vnd.surveymonkey.response.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: response_deleted
+              object_type:
+                const: response
+              resources:
+                $ref: '#/components/schemas/ResponseResources'
+    CollectorCreatedEvent:
+      name: CollectorCreatedEvent
+      title: Collector Created
+      summary: A collector was created.
+      contentType: application/vnd.surveymonkey.collector.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: collector_created
+              object_type:
+                const: collector
+              resources:
+                $ref: '#/components/schemas/CollectorResources'
+    CollectorUpdatedEvent:
+      name: CollectorUpdatedEvent
+      title: Collector Updated
+      summary: A collector was updated.
+      contentType: application/vnd.surveymonkey.collector.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: collector_updated
+              object_type:
+                const: collector
+              resources:
+                $ref: '#/components/schemas/CollectorResources'
+    CollectorDeletedEvent:
+      name: CollectorDeletedEvent
+      title: Collector Deleted
+      summary: A collector was deleted.
+      contentType: application/vnd.surveymonkey.collector.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: collector_deleted
+              object_type:
+                const: collector
+              resources:
+                $ref: '#/components/schemas/CollectorResources'
+    SurveyCreatedEvent:
+      name: SurveyCreatedEvent
+      title: Survey Created
+      summary: A survey was created.
+      contentType: application/vnd.surveymonkey.survey.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: survey_created
+              object_type:
+                const: survey
+              resources:
+                $ref: '#/components/schemas/SurveyResources'
+    SurveyUpdatedEvent:
+      name: SurveyUpdatedEvent
+      title: Survey Updated
+      summary: A survey was updated.
+      contentType: application/vnd.surveymonkey.survey.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: survey_updated
+              object_type:
+                const: survey
+              resources:
+                $ref: '#/components/schemas/SurveyResources'
+    SurveyDeletedEvent:
+      name: SurveyDeletedEvent
+      title: Survey Deleted
+      summary: A survey was deleted.
+      contentType: application/vnd.surveymonkey.survey.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: survey_deleted
+              object_type:
+                const: survey
+              resources:
+                $ref: '#/components/schemas/SurveyResources'
+    AppInstalledEvent:
+      name: AppInstalledEvent
+      title: App Installed
+      summary: The application was installed.
+      contentType: application/vnd.surveymonkey.app.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: app_installed
+              object_type:
+                const: app
+              resources:
+                $ref: '#/components/schemas/AppResources'
+    AppUninstalledEvent:
+      name: AppUninstalledEvent
+      title: App Uninstalled
+      summary: The application was uninstalled.
+      contentType: application/vnd.surveymonkey.app.v1+json
+      traits:
+        - $ref: '#/components/messageTraits/SurveyMonkeyCallback'
+      payload:
+        allOf:
+          - $ref: '#/components/schemas/WebhookCallbackEnvelope'
+          - type: object
+            properties:
+              event_type:
+                const: app_uninstalled
+              object_type:
+                const: app
+              resources:
+                $ref: '#/components/schemas/AppResources'
+  schemas:
+    WebhookCallbackEnvelope:
+      type: object
+      description: >-
+        Shared shape of every SurveyMonkey webhook callback body, per the
+        "Callback Event" table in the v3 docs.
+      required:
+        - name
+        - event_type
+        - event_id
+        - object_type
+        - object_id
+        - event_datetime
+        - resources
+      properties:
+        name:
+          type: string
+          description: Webhook name (as configured at registration time).
+        filter_type:
+          type: string
+          description: >-
+            Which kind of object the webhook is set to filter events by —
+            mirrors the `object_type` set on the webhook subscription.
+          enum:
+            - survey
+            - collector
+            - app
+        filter_id:
+          type: string
+          description: The id of the object the webhook was filtered against.
+        event_type:
+          type: string
+          description: Event type that triggered the callback.
+          enum:
+            - response_completed
+            - response_updated
+            - response_disqualified
+            - response_created
+            - response_deleted
+            - response_overquota
+            - collector_created
+            - collector_updated
+            - collector_deleted
+            - survey_created
+            - survey_updated
+            - survey_deleted
+            - app_installed
+            - app_uninstalled
+        event_id:
+          type: string
+          description: Unique id of the event.
+        object_type:
+          type: string
+          description: Type of object the event occurred for.
+          enum:
+            - response
+            - collector
+            - survey
+            - app
+        object_id:
+          type: string
+          description: Id of the object the event occurred for.
+        event_datetime:
+          type: string
+          format: date-time
+          description: ISO 8601 timestamp of when the event occurred.
+        resources:
+          type: object
+          description: >-
+            Ids associated with the event. The set of keys present depends on
+            the webhook configuration and event type — may include
+            `respondent_id`, `recipient_id`, `collector_id`, `survey_id`, and
+            `user_id`.
+    ResponseResources:
+      type: object
+      description: >-
+        Resource ids carried on `response_*` callbacks. `respondent_id` and
+        `recipient_id` may be omitted when the webhook is filtered at the
+        survey level rather than at the collector level.
+      properties:
+        respondent_id:
+          type: string
+        recipient_id:
+          type: string
+        collector_id:
+          type: string
+        survey_id:
+          type: string
+        user_id:
+          type: string
+    CollectorResources:
+      type: object
+      description: Resource ids carried on `collector_*` callbacks.
+      properties:
+        collector_id:
+          type: string
+        survey_id:
+          type: string
+        user_id:
+          type: string
+    SurveyResources:
+      type: object
+      description: Resource ids carried on `survey_*` callbacks.
+      properties:
+        survey_id:
+          type: string
+        user_id:
+          type: string
+    AppResources:
+      type: object
+      description: >-
+        Resource ids carried on `app_installed` / `app_uninstalled` callbacks.
+      properties:
+        user_id:
+          type: string
+    WebhookSubscription:
+      type: object
+      description: >-
+        Out-of-band reference to the webhook resource registered via
+        `POST /v3/webhooks`. Included here to document the producer-side
+        configuration that determines which events will be delivered to the
+        subscriber.
+      required:
+        - name
+        - subscription_url
+        - event_type
+      properties:
+        id:
+          type: string
+          description: Webhook id (server-assigned).
+        name:
+          type: string
+          description: Friendly name for the webhook.
+        subscription_url:
+          type: string
+          format: uri
+          description: The HTTPS URL SurveyMonkey will POST callbacks to.
+        authorization:
+          type: string
+          description: >-
+            Optional string echoed back in the `Authorization` request header
+            on every callback. Useful as a coarse shared-secret check in
+            addition to `Sm-Signature` validation.
+        verify_ssl:
+          type: boolean
+          description: Whether SurveyMonkey should verify the subscriber's TLS certificate.
+          default: true
+        bypass_ping:
+          type: boolean
+          description: Skip the ping of `subscription_url` at registration time.
+          default: false
+        event_type:
+          type: string
+          description: Event the webhook listens to.
+          enum:
+            - response_completed
+            - response_updated
+            - response_disqualified
+            - response_created
+            - response_deleted
+            - response_overquota
+            - collector_created
+            - collector_updated
+            - collector_deleted
+            - survey_created
+            - survey_updated
+            - survey_deleted
+            - app_installed
+            - app_uninstalled
+        object_type:
+          type: string
+          description: >-
+            Object type to filter events by. Required for every event type
+            except `survey_created` (for which it is optional). Must be `app`
+            for `app_installed`/`app_uninstalled`. Do not use `collector` with
+            `collector_created`.
+          enum:
+            - survey
+            - collector
+            - app
+        object_ids:
+          type: array
+          description: >-
+            Object ids to filter on. Required whenever `object_type` is set.
+          items:
+            type: string
+  securitySchemes:
+    smSignature:
+      type: symmetricEncryption
+      description: >-
+        Verify each callback by recomputing the base64-encoded HMAC-SHA1 digest
+        of the raw request body with the key `<client_id>&<api_secret>` and
+        comparing it (constant-time) to the `Sm-Signature` request header. The
+        `Sm-Apikey` header carries the application Client ID so the consumer
+        knows which secret to use when multiple apps share the subscriber.
