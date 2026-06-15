@@ -1,0 +1,632 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SurveyMonkey API v3",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.surveymonkey.com/oauth/authorize",
+      "accessTokenUrl": "https://api.surveymonkey.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get current user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/users/me"
+          },
+          "docs": "Get current user"
+        },
+        {
+          "info": {
+            "name": "List a user's workgroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/users/:user_id/workgroups",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List a user's workgroups"
+        },
+        {
+          "info": {
+            "name": "List resources shared with a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/users/:user_id/shared",
+            "params": [
+              {
+                "name": "user_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List resources shared with a user"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List groups/teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups"
+          },
+          "docs": "List groups/teams"
+        },
+        {
+          "info": {
+            "name": "Get group details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get group details"
+        },
+        {
+          "info": {
+            "name": "List group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id/members",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List group members"
+        },
+        {
+          "info": {
+            "name": "Get member details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id/members/:member_id",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "member_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get member details"
+        },
+        {
+          "info": {
+            "name": "Update member",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id/members/:member_id",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "member_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update member"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Workgroups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workgroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/workgroups"
+          },
+          "docs": "List workgroups"
+        },
+        {
+          "info": {
+            "name": "Create workgroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/workgroups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create workgroup"
+        },
+        {
+          "info": {
+            "name": "Get workgroup details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/workgroups/:workgroup_id",
+            "params": [
+              {
+                "name": "workgroup_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get workgroup details"
+        },
+        {
+          "info": {
+            "name": "Update workgroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.surveymonkey.com/v3/workgroups/:workgroup_id",
+            "params": [
+              {
+                "name": "workgroup_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update workgroup"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Surveys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List surveys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys"
+          },
+          "docs": "List surveys"
+        },
+        {
+          "info": {
+            "name": "Create survey",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/surveys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create survey"
+        },
+        {
+          "info": {
+            "name": "Get survey details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get survey details"
+        },
+        {
+          "info": {
+            "name": "Search surveys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/search",
+            "params": [
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search surveys"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Survey Structure",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List survey pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List survey pages"
+        },
+        {
+          "info": {
+            "name": "Get page details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages/:page_id",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get page details"
+        },
+        {
+          "info": {
+            "name": "List questions on a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages/:page_id/questions",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List questions on a page"
+        },
+        {
+          "info": {
+            "name": "Get question details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages/:page_id/questions/:question_id",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "question_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get question details"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Responses",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List survey responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/responses",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List survey responses"
+        },
+        {
+          "info": {
+            "name": "Retrieve bulk responses",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/responses/bulk",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Retrieve bulk responses"
+        },
+        {
+          "info": {
+            "name": "Response counts (rollups)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/rollups",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Response counts (rollups)"
+        },
+        {
+          "info": {
+            "name": "Response trends",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/trends",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Response trends"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Collectors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collectors for a survey",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/collectors",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List collectors for a survey"
+        },
+        {
+          "info": {
+            "name": "Send a collector invitation message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/collectors/:collector_id/messages/:message_id/send",
+            "params": [
+              {
+                "name": "collector_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Send a collector invitation message"
+        },
+        {
+          "info": {
+            "name": "List collector recipients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/collectors/:collector_id/recipients",
+            "params": [
+              {
+                "name": "collector_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List collector recipients"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contact lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/contact_lists"
+          },
+          "docs": "List contact lists"
+        },
+        {
+          "info": {
+            "name": "List contacts within a contact list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/contact_lists/:contact_list_id/contacts",
+            "params": [
+              {
+                "name": "contact_list_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List contacts within a contact list"
+        },
+        {
+          "info": {
+            "name": "Bulk add contacts to a list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/contact_lists/:contact_list_id/contacts/bulk",
+            "params": [
+              {
+                "name": "contact_list_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Bulk add contacts to a list"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

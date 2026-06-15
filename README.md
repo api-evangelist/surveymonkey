@@ -1,40 +1,64 @@
 # SurveyMonkey (surveymonkey)
 
-SurveyMonkey is a leading surveys and feedback platform. The SurveyMonkey API v3 is a REST/JSON API covering surveys, pages, questions, collectors, contacts, responses, webhooks, users, teams, groups and benchmarks. Authenticated with OAuth 2.0 (3-step flow) and scope-based permissions.
+SurveyMonkey is a leading surveys and feedback platform. The SurveyMonkey API v3 is a REST API exposing surveys, pages, questions, collectors, contacts, responses, webhooks, users, teams, groups and benchmarks. Authenticated via OAuth 2.0 with scoped permissions.
 
-**APIs.json:** [apis.yml](apis.yml)
-
-## APIs
-- **API v3** — `https://api.surveymonkey.com/v3` — surveys, responses, collectors, contacts, webhooks, users, teams. OAuth 2.0; some scopes require paid plans. [Docs](https://api.surveymonkey.com/v3/docs).
-
-## OpenAPI
-SurveyMonkey does not publish a downloadable OpenAPI/Swagger spec at a stable public URL as of 2026-05-08; pipeline did not retrieve a spec into `openapi/`.
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/main/apis.yml)
 
 ## Tags
-Surveys, Market Research, Feedback, NPS, Forms, OAuth
 
-## Common Properties
-- [Website](https://www.surveymonkey.com/) · [API Docs](https://api.surveymonkey.com/v3/docs) · [Pricing](https://www.surveymonkey.com/pricing/)
-- [GitHub](https://github.com/SurveyMonkey) · [Status](https://status.surveymonkey.com/)
-- [Plans](plans/surveymonkey-plans-pricing.yml) — reconciled
-- [Rate Limits](rate-limits/surveymonkey-rate-limits.yml) — reconciled
-- [FinOps](finops/surveymonkey-finops.yml) — reconciled, FOCUS-aligned
-
-## Plans (reconciled)
-- **Team Advantage** — $30/user/mo (annual, min 3 users); 50K responses/year.
-- **Team Premier** — $92/user/mo (annual, min 3 users); 100K responses/year.
-- **Enterprise** — custom; flexible response limits.
-- **Individual plans** — Standard / Advantage / Premier.
-- **Overage** — $0.15/response above bundle.
-
-## Rate Limits (reconciled)
-- Draft / Private apps: 120 req/min, daily floor 500/day (raisable).
-- Public apps (App Directory): up to 500,000 req/day.
-- 429 responses; X-Ratelimit-* headers expose remaining capacity.
+- Surveys
+- Market Research
+- Feedback
+- NPS
+- Forms
+- OAuth
 
 ## Timestamps
+
 - **Created:** 2026-05-08
-- **Modified:** 2026-05-08
+- **Modified:** 2026-05-30
+
+## APIs
+
+### SurveyMonkey API v3
+
+REST/JSON API for the SurveyMonkey platform — surveys, pages, questions, collectors, contacts, responses, webhooks, users, teams. Three-step OAuth 2.0 flow; scope-based permissions; some scopes require paid plans.
+
+- **Human URL:** [https://api.surveymonkey.com/v3/docs](https://api.surveymonkey.com/v3/docs)
+- **Base URL:** `https://api.surveymonkey.com/v3`
+
+#### Tags
+
+- REST
+- OAuth 2.0
+- Surveys
+- Responses
+- Webhooks
+
+#### Properties
+
+- [Documentation](https://api.surveymonkey.com/v3/docs)
+- [Authentication](https://api.surveymonkey.com/v3/docs#authentication)
+- [Webhooks](https://api.surveymonkey.com/v3/docs#api-endpoint-webhooks)
+- [OpenAPI](openapi/surveymonkey-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/surveymonkey.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/surveymonkey.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [AsyncAPI](asyncapi/surveymonkey-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
+- [SDK](https://github.com/SurveyMonkey)
+
+## Common Properties
+
+- [LinkedIn](https://www.linkedin.com/company/surveymonkey)
+- [Website](https://www.surveymonkey.com/)
+- [Documentation](https://api.surveymonkey.com/v3/docs)
+- [Pricing](https://www.surveymonkey.com/pricing/)
+- [Git Hub](https://github.com/SurveyMonkey)
+- [Status Page](https://status.surveymonkey.com/)
+- [Plans](plans/surveymonkey-plans-pricing.yml)
+- [Rate Limits](rate-limits/surveymonkey-rate-limits.yml)
+- [Fin Ops](finops/surveymonkey-finops.yml)
 
 ## Maintainers
-- **Kin Lane** — kin@apievangelist.com
+
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
