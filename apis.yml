@@ -7,7 +7,7 @@ description: >-
   API v3 is a REST API exposing surveys, pages, questions, collectors, contacts,
   responses, webhooks, users, teams, groups and benchmarks. Authenticated via
   OAuth 2.0 with scoped permissions.
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Surveys
   - Market Research
@@ -25,7 +25,7 @@ apis:
       REST/JSON API for the SurveyMonkey platform — surveys, pages, questions,
       collectors, contacts, responses, webhooks, users, teams. Three-step
       OAuth 2.0 flow; scope-based permissions; some scopes require paid plans.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://api.surveymonkey.com/v3/docs
     baseURL: https://api.surveymonkey.com/v3
     tags:
