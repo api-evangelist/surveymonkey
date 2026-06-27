@@ -45,7 +45,7 @@ apis:
         url: openapi/surveymonkey-openapi.yml
       - type: AsyncAPI
         url: asyncapi/surveymonkey-asyncapi.yml
-      - type: SDK
+      - type: SDKs
         url: https://github.com/SurveyMonkey
 common:
   - type: LinkedIn
