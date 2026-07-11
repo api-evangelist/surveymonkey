@@ -1,0 +1,53 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/surveymonkey-openapi.yml
+schemes:
+- name: oauth2
+  source: openapi/surveymonkey-openapi.yml
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://api.surveymonkey.com/oauth/authorize
+    tokenUrl: https://api.surveymonkey.com/oauth/token
+scopes:
+- scope: contacts_read
+  description: Read contacts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/surveymonkey-openapi.yml
+- scope: contacts_write
+  description: Modify contacts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/surveymonkey-openapi.yml
+- scope: responses_read
+  description: Read responses
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/surveymonkey-openapi.yml
+- scope: responses_write
+  description: Create and modify responses
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/surveymonkey-openapi.yml
+- scope: surveys_read
+  description: Read surveys
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/surveymonkey-openapi.yml
+- scope: surveys_write
+  description: Create and modify surveys
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/surveymonkey-openapi.yml
+- scope: users_read
+  description: Read user data
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/surveymonkey-openapi.yml

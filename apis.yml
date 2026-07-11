@@ -69,3 +69,10 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+common:
+  - type: Authentication
+    url: authentication/surveymonkey-authentication.yml
+  - type: OAuthScopes
+    url: scopes/surveymonkey-scopes.yml
+  - url: https://www.surveymonkey.com/feed/
+    type: Blog
