@@ -70,6 +70,10 @@ maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
 common:
+  - type: TrustCenter
+    url: security/surveymonkey-trust-center.yml
+  - type: DomainSecurity
+    url: security/surveymonkey-domain-security.yml
   - type: Authentication
     url: authentication/surveymonkey-authentication.yml
   - type: OAuthScopes
