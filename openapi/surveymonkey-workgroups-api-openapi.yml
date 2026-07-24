@@ -1,0 +1,128 @@
+openapi: 3.1.0
+info:
+  title: SurveyMonkey API v3 Collectors Workgroups API
+  description: SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.
+  version: 3.0.0
+  contact:
+    name: SurveyMonkey API documentation
+    url: https://api.surveymonkey.com/v3/docs
+servers:
+- url: https://api.surveymonkey.com/v3
+  description: Production
+security:
+- oauth2: []
+tags:
+- name: Workgroups
+paths:
+  /workgroups:
+    get:
+      tags:
+      - Workgroups
+      summary: List workgroups
+      operationId: listWorkgroups
+      responses:
+        '200':
+          description: Workgroups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+    post:
+      tags:
+      - Workgroups
+      summary: Create workgroup
+      operationId: createWorkgroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workgroup'
+      responses:
+        '201':
+          description: Workgroup created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workgroup'
+  /workgroups/{workgroup_id}:
+    parameters:
+    - in: path
+      name: workgroup_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Workgroups
+      summary: Get workgroup details
+      operationId: getWorkgroup
+      responses:
+        '200':
+          description: Workgroup details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workgroup'
+    patch:
+      tags:
+      - Workgroups
+      summary: Update workgroup
+      operationId: updateWorkgroup
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Workgroup'
+      responses:
+        '200':
+          description: Updated workgroup
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Workgroup'
+components:
+  schemas:
+    Collection:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        per_page:
+          type: integer
+        page:
+          type: integer
+        total:
+          type: integer
+        links:
+          type: object
+          additionalProperties:
+            type: string
+    Workgroup:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.surveymonkey.com/oauth/authorize
+          tokenUrl: https://api.surveymonkey.com/oauth/token
+          scopes:
+            surveys_read: Read surveys
+            surveys_write: Create and modify surveys
+            responses_read: Read responses
+            responses_write: Create and modify responses
+            contacts_read: Read contacts
+            contacts_write: Modify contacts
+            users_read: Read user data

@@ -1,0 +1,117 @@
+openapi: 3.1.0
+info:
+  title: SurveyMonkey API v3 Collectors Users API
+  description: SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.
+  version: 3.0.0
+  contact:
+    name: SurveyMonkey API documentation
+    url: https://api.surveymonkey.com/v3/docs
+servers:
+- url: https://api.surveymonkey.com/v3
+  description: Production
+security:
+- oauth2: []
+tags:
+- name: Users
+paths:
+  /users/me:
+    get:
+      tags:
+      - Users
+      summary: Get current user
+      operationId: getCurrentUser
+      responses:
+        '200':
+          description: Current user details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+  /users/{user_id}/workgroups:
+    parameters:
+    - in: path
+      name: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Users
+      summary: List a user's workgroups
+      operationId: listUserWorkgroups
+      responses:
+        '200':
+          description: Workgroups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /users/{user_id}/shared:
+    parameters:
+    - in: path
+      name: user_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Users
+      summary: List resources shared with a user
+      operationId: listUserShared
+      responses:
+        '200':
+          description: Shared resources
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        account_type:
+          type: string
+    Collection:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        per_page:
+          type: integer
+        page:
+          type: integer
+        total:
+          type: integer
+        links:
+          type: object
+          additionalProperties:
+            type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.surveymonkey.com/oauth/authorize
+          tokenUrl: https://api.surveymonkey.com/oauth/token
+          scopes:
+            surveys_read: Read surveys
+            surveys_write: Create and modify surveys
+            responses_read: Read responses
+            responses_write: Create and modify responses
+            contacts_read: Read contacts
+            contacts_write: Modify contacts
+            users_read: Read user data

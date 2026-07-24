@@ -1,0 +1,145 @@
+openapi: 3.1.0
+info:
+  title: SurveyMonkey API v3 Collectors Surveys API
+  description: SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.
+  version: 3.0.0
+  contact:
+    name: SurveyMonkey API documentation
+    url: https://api.surveymonkey.com/v3/docs
+servers:
+- url: https://api.surveymonkey.com/v3
+  description: Production
+security:
+- oauth2: []
+tags:
+- name: Surveys
+paths:
+  /surveys:
+    get:
+      tags:
+      - Surveys
+      summary: List surveys
+      operationId: listSurveys
+      responses:
+        '200':
+          description: Surveys
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+    post:
+      tags:
+      - Surveys
+      summary: Create survey
+      operationId: createSurvey
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Survey'
+      responses:
+        '201':
+          description: Survey created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Survey'
+  /surveys/{id}:
+    parameters:
+    - in: path
+      name: id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Surveys
+      summary: Get survey details
+      operationId: getSurvey
+      responses:
+        '200':
+          description: Survey details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Survey'
+  /surveys/search:
+    get:
+      tags:
+      - Surveys
+      summary: Search surveys
+      operationId: searchSurveys
+      parameters:
+      - in: query
+        name: title
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Survey search results
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+components:
+  schemas:
+    Survey:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        nickname:
+          type: string
+        language:
+          type: string
+        question_count:
+          type: integer
+        page_count:
+          type: integer
+        response_count:
+          type: integer
+        date_created:
+          type: string
+          format: date-time
+        date_modified:
+          type: string
+          format: date-time
+        href:
+          type: string
+          format: uri
+    Collection:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        per_page:
+          type: integer
+        page:
+          type: integer
+        total:
+          type: integer
+        links:
+          type: object
+          additionalProperties:
+            type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.surveymonkey.com/oauth/authorize
+          tokenUrl: https://api.surveymonkey.com/oauth/token
+          scopes:
+            surveys_read: Read surveys
+            surveys_write: Create and modify surveys
+            responses_read: Read responses
+            responses_write: Create and modify responses
+            contacts_read: Read contacts
+            contacts_write: Modify contacts
+            users_read: Read user data

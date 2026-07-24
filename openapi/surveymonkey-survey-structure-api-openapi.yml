@@ -1,0 +1,178 @@
+openapi: 3.1.0
+info:
+  title: SurveyMonkey API v3 Collectors Survey Structure API
+  description: SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.
+  version: 3.0.0
+  contact:
+    name: SurveyMonkey API documentation
+    url: https://api.surveymonkey.com/v3/docs
+servers:
+- url: https://api.surveymonkey.com/v3
+  description: Production
+security:
+- oauth2: []
+tags:
+- name: Survey Structure
+paths:
+  /surveys/{survey_id}/pages:
+    parameters:
+    - in: path
+      name: survey_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Survey Structure
+      summary: List survey pages
+      operationId: listSurveyPages
+      responses:
+        '200':
+          description: Pages
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /surveys/{survey_id}/pages/{page_id}:
+    parameters:
+    - in: path
+      name: survey_id
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: page_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Survey Structure
+      summary: Get page details
+      operationId: getSurveyPage
+      responses:
+        '200':
+          description: Page details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Page'
+  /surveys/{survey_id}/pages/{page_id}/questions:
+    parameters:
+    - in: path
+      name: survey_id
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: page_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Survey Structure
+      summary: List questions on a page
+      operationId: listSurveyQuestions
+      responses:
+        '200':
+          description: Questions
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /surveys/{survey_id}/pages/{page_id}/questions/{question_id}:
+    parameters:
+    - in: path
+      name: survey_id
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: page_id
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: question_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Survey Structure
+      summary: Get question details
+      operationId: getSurveyQuestion
+      responses:
+        '200':
+          description: Question details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Question'
+components:
+  schemas:
+    Page:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        position:
+          type: integer
+        question_count:
+          type: integer
+    Collection:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        per_page:
+          type: integer
+        page:
+          type: integer
+        total:
+          type: integer
+        links:
+          type: object
+          additionalProperties:
+            type: string
+    Question:
+      type: object
+      properties:
+        id:
+          type: string
+        position:
+          type: integer
+        family:
+          type: string
+        subtype:
+          type: string
+        headings:
+          type: array
+          items:
+            type: object
+            properties:
+              heading:
+                type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.surveymonkey.com/oauth/authorize
+          tokenUrl: https://api.surveymonkey.com/oauth/token
+          scopes:
+            surveys_read: Read surveys
+            surveys_write: Create and modify surveys
+            responses_read: Read responses
+            responses_write: Create and modify responses
+            contacts_read: Read contacts
+            contacts_write: Modify contacts
+            users_read: Read user data

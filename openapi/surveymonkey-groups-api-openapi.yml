@@ -1,0 +1,164 @@
+openapi: 3.1.0
+info:
+  title: SurveyMonkey API v3 Collectors Groups API
+  description: SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.
+  version: 3.0.0
+  contact:
+    name: SurveyMonkey API documentation
+    url: https://api.surveymonkey.com/v3/docs
+servers:
+- url: https://api.surveymonkey.com/v3
+  description: Production
+security:
+- oauth2: []
+tags:
+- name: Groups
+paths:
+  /groups:
+    get:
+      tags:
+      - Groups
+      summary: List groups/teams
+      operationId: listGroups
+      responses:
+        '200':
+          description: Groups
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /groups/{group_id}:
+    parameters:
+    - in: path
+      name: group_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Groups
+      summary: Get group details
+      operationId: getGroup
+      responses:
+        '200':
+          description: Group details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+  /groups/{group_id}/members:
+    parameters:
+    - in: path
+      name: group_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Groups
+      summary: List group members
+      operationId: listGroupMembers
+      responses:
+        '200':
+          description: Members
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Collection'
+  /groups/{group_id}/members/{member_id}:
+    parameters:
+    - in: path
+      name: group_id
+      required: true
+      schema:
+        type: string
+    - in: path
+      name: member_id
+      required: true
+      schema:
+        type: string
+    get:
+      tags:
+      - Groups
+      summary: Get member details
+      operationId: getGroupMember
+      responses:
+        '200':
+          description: Member details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+    patch:
+      tags:
+      - Groups
+      summary: Update member
+      operationId: updateGroupMember
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Member'
+      responses:
+        '200':
+          description: Updated member
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Member'
+components:
+  schemas:
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        member_count:
+          type: integer
+    Collection:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        per_page:
+          type: integer
+        page:
+          type: integer
+        total:
+          type: integer
+        links:
+          type: object
+          additionalProperties:
+            type: string
+    Member:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+        status:
+          type: string
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://api.surveymonkey.com/oauth/authorize
+          tokenUrl: https://api.surveymonkey.com/oauth/token
+          scopes:
+            surveys_read: Read surveys
+            surveys_write: Create and modify surveys
+            responses_read: Read responses
+            responses_write: Create and modify responses
+            contacts_read: Read contacts
+            contacts_write: Modify contacts
+            users_read: Read user data
