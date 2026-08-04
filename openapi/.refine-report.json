@@ -1,0 +1,28 @@
+{
+  "provider": "surveymonkey",
+  "sources": [
+    "surveymonkey-collectors-api-openapi.yml",
+    "surveymonkey-contacts-api-openapi.yml",
+    "surveymonkey-groups-api-openapi.yml",
+    "surveymonkey-responses-api-openapi.yml",
+    "surveymonkey-survey-structure-api-openapi.yml",
+    "surveymonkey-surveys-api-openapi.yml",
+    "surveymonkey-users-api-openapi.yml",
+    "surveymonkey-workgroups-api-openapi.yml"
+  ],
+  "outputs": [
+    "surveymonkey-collectors-api-openapi.yml",
+    "surveymonkey-contacts-api-openapi.yml",
+    "surveymonkey-groups-api-openapi.yml",
+    "surveymonkey-responses-api-openapi.yml",
+    "surveymonkey-survey-structure-api-openapi.yml",
+    "surveymonkey-surveys-api-openapi.yml",
+    "surveymonkey-users-api-openapi.yml",
+    "surveymonkey-workgroups-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
