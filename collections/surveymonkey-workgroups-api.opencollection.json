@@ -1,0 +1,96 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SurveyMonkey API v3 Collectors Workgroups API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.surveymonkey.com/oauth/authorize",
+      "accessTokenUrl": "https://api.surveymonkey.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Workgroups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List workgroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/workgroups"
+          },
+          "docs": "List workgroups"
+        },
+        {
+          "info": {
+            "name": "Create workgroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/workgroups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create workgroup"
+        },
+        {
+          "info": {
+            "name": "Get workgroup details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/workgroups/:workgroup_id",
+            "params": [
+              {
+                "name": "workgroup_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get workgroup details"
+        },
+        {
+          "info": {
+            "name": "Update workgroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.surveymonkey.com/v3/workgroups/:workgroup_id",
+            "params": [
+              {
+                "name": "workgroup_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update workgroup"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

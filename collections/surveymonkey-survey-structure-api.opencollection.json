@@ -1,0 +1,122 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SurveyMonkey API v3 Collectors Survey Structure API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.surveymonkey.com/oauth/authorize",
+      "accessTokenUrl": "https://api.surveymonkey.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Survey Structure",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List survey pages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List survey pages"
+        },
+        {
+          "info": {
+            "name": "Get page details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages/:page_id",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get page details"
+        },
+        {
+          "info": {
+            "name": "List questions on a page",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages/:page_id/questions",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List questions on a page"
+        },
+        {
+          "info": {
+            "name": "Get question details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/pages/:page_id/questions/:question_id",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "page_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "question_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get question details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

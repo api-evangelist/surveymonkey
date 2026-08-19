@@ -1,0 +1,415 @@
+{
+  "item": [
+    {
+      "id": "1d0bcc7f-dcbb-482d-a7e5-1b2aca4fbb38",
+      "name": "Responses",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "25a9a211-aaf8-4337-bd21-cb8c3bfe4bd8",
+          "name": "List survey responses",
+          "request": {
+            "name": "List survey responses",
+            "description": {},
+            "url": {
+              "path": [
+                "surveys",
+                ":survey_id",
+                "responses"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "survey_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5a4a48d6-6971-48c1-b2d4-03a59dcd49e5",
+              "name": "Responses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "surveys",
+                    ":survey_id",
+                    "responses"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "survey_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"key_0\": 4715.272567088838\n    },\n    {\n      \"key_0\": 6628.069489636244,\n      \"key_1\": 8093,\n      \"key_2\": true\n    }\n  ],\n  \"per_page\": 7565,\n  \"page\": 2393,\n  \"total\": 7004,\n  \"links\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5cdf2052-46d5-4cdf-a223-bc4f2820065b",
+          "name": "Retrieve bulk responses",
+          "request": {
+            "name": "Retrieve bulk responses",
+            "description": {},
+            "url": {
+              "path": [
+                "surveys",
+                ":survey_id",
+                "responses",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "survey_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "fbfccfad-2671-4925-8833-7301742a61d5",
+              "name": "Bulk responses",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "surveys",
+                    ":survey_id",
+                    "responses",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "survey_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"key_0\": 4715.272567088838\n    },\n    {\n      \"key_0\": 6628.069489636244,\n      \"key_1\": 8093,\n      \"key_2\": true\n    }\n  ],\n  \"per_page\": 7565,\n  \"page\": 2393,\n  \"total\": 7004,\n  \"links\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "5f975415-bfcb-4802-9f79-61f373f6683a",
+          "name": "Response counts (rollups)",
+          "request": {
+            "name": "Response counts (rollups)",
+            "description": {},
+            "url": {
+              "path": [
+                "surveys",
+                ":survey_id",
+                "rollups"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "survey_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "dd0fe8c0-4fe6-479b-ad41-1c1c3d27918b",
+              "name": "Rollups",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "surveys",
+                    ":survey_id",
+                    "rollups"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "survey_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "979bfaec-dca4-4841-98bb-5e3be8726ad8",
+          "name": "Response trends",
+          "request": {
+            "name": "Response trends",
+            "description": {},
+            "url": {
+              "path": [
+                "surveys",
+                ":survey_id",
+                "trends"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "survey_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8bfe25bf-203d-42e0-83a7-6ddc46ebc178",
+              "name": "Trends",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "surveys",
+                    ":survey_id",
+                    "trends"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "survey_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.surveymonkey.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "surveys_read surveys_write responses_read responses_write contacts_read contacts_write users_read"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.surveymonkey.com/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://api.surveymonkey.com/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d270d8e4-8b95-42ea-bfff-815499f1623e",
+    "name": "SurveyMonkey API v3 Collectors Responses API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.\n\nContact Support:\n Name: SurveyMonkey API documentation",
+      "type": "text/plain"
+    }
+  }
+}

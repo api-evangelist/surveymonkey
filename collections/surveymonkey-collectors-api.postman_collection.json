@@ -1,0 +1,346 @@
+{
+  "item": [
+    {
+      "id": "60e345d2-bdd2-452e-baf8-7b3687d8505c",
+      "name": "Collectors",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "dab933fb-99ee-42b4-8087-6d5883e9ca66",
+          "name": "List collectors for a survey",
+          "request": {
+            "name": "List collectors for a survey",
+            "description": {},
+            "url": {
+              "path": [
+                "surveys",
+                ":survey_id",
+                "collectors"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "survey_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d3e55b30-965a-4bb1-b3c2-6afc252aea04",
+              "name": "Collectors",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "surveys",
+                    ":survey_id",
+                    "collectors"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "survey_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"key_0\": 2065.6917373670058\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 431.00731798707545\n    }\n  ],\n  \"per_page\": 5563,\n  \"page\": 7142,\n  \"total\": 7451,\n  \"links\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6456222a-6d8a-4a3d-9b51-0aa85705735c",
+          "name": "Send a collector invitation message",
+          "request": {
+            "name": "Send a collector invitation message",
+            "description": {},
+            "url": {
+              "path": [
+                "collectors",
+                ":collector_id",
+                "messages",
+                ":message_id",
+                "send"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collector_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "message_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "28d33a4c-5337-4ac8-bbcb-178564741a0f",
+              "name": "Send requested",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collectors",
+                    ":collector_id",
+                    "messages",
+                    ":message_id",
+                    "send"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collector_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "message_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Accepted",
+              "code": 202,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ed1bfe21-f50e-42f8-bd63-3da5bdaa97ad",
+          "name": "List collector recipients",
+          "request": {
+            "name": "List collector recipients",
+            "description": {},
+            "url": {
+              "path": [
+                "collectors",
+                ":collector_id",
+                "recipients"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "collector_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c7a78543-7d96-4350-ac9d-69d9be065a60",
+              "name": "Recipients",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "collectors",
+                    ":collector_id",
+                    "recipients"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "collector_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"key_0\": 2065.6917373670058\n    },\n    {\n      \"key_0\": false,\n      \"key_1\": 431.00731798707545\n    }\n  ],\n  \"per_page\": 5563,\n  \"page\": 7142,\n  \"total\": 7451,\n  \"links\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.surveymonkey.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "surveys_read surveys_write responses_read responses_write contacts_read contacts_write users_read"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.surveymonkey.com/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://api.surveymonkey.com/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "166471a9-18f4-4344-ad14-9a85e71a0572",
+    "name": "SurveyMonkey API v3 Collectors API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.\n\nContact Support:\n Name: SurveyMonkey API documentation",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SurveyMonkey API v3 Collectors Surveys API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.surveymonkey.com/oauth/authorize",
+      "accessTokenUrl": "https://api.surveymonkey.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Surveys",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List surveys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys"
+          },
+          "docs": "List surveys"
+        },
+        {
+          "info": {
+            "name": "Create survey",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/surveys",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create survey"
+        },
+        {
+          "info": {
+            "name": "Get survey details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get survey details"
+        },
+        {
+          "info": {
+            "name": "Search surveys",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/search",
+            "params": [
+              {
+                "name": "title",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Search surveys"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

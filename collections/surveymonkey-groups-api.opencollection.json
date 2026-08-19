@@ -1,0 +1,127 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SurveyMonkey API v3 Collectors Groups API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.surveymonkey.com/oauth/authorize",
+      "accessTokenUrl": "https://api.surveymonkey.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List groups/teams",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups"
+          },
+          "docs": "List groups/teams"
+        },
+        {
+          "info": {
+            "name": "Get group details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get group details"
+        },
+        {
+          "info": {
+            "name": "List group members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id/members",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List group members"
+        },
+        {
+          "info": {
+            "name": "Get member details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id/members/:member_id",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "member_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get member details"
+        },
+        {
+          "info": {
+            "name": "Update member",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.surveymonkey.com/v3/groups/:group_id/members/:member_id",
+            "params": [
+              {
+                "name": "group_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "member_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update member"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

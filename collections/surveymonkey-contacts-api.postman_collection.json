@@ -1,0 +1,333 @@
+{
+  "item": [
+    {
+      "id": "8c5b8dfd-6b50-4a52-9a0f-282394678597",
+      "name": "Contacts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "942a8a28-a8de-4a9c-b9f4-bd15e15347fc",
+          "name": "List contact lists",
+          "request": {
+            "name": "List contact lists",
+            "description": {},
+            "url": {
+              "path": [
+                "contact_lists"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40f1975d-d21b-40b8-8d18-9f22a60788e1",
+              "name": "Contact lists",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact_lists"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"key_0\": 7377.964408508252,\n      \"key_1\": 7534,\n      \"key_2\": \"string\",\n      \"key_3\": 9349.545417637231\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6523.365551027294,\n      \"key_2\": \"string\"\n    }\n  ],\n  \"per_page\": 7551,\n  \"page\": 9688,\n  \"total\": 8092,\n  \"links\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "1f753034-fdc3-4b88-85f8-1b771b8d9af7",
+          "name": "List contacts within a contact list",
+          "request": {
+            "name": "List contacts within a contact list",
+            "description": {},
+            "url": {
+              "path": [
+                "contact_lists",
+                ":contact_list_id",
+                "contacts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contact_list_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "486a623f-d2d4-4c52-ad0e-23e9d224e182",
+              "name": "Contacts",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact_lists",
+                    ":contact_list_id",
+                    "contacts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contact_list_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"data\": [\n    {\n      \"key_0\": 7377.964408508252,\n      \"key_1\": 7534,\n      \"key_2\": \"string\",\n      \"key_3\": 9349.545417637231\n    },\n    {\n      \"key_0\": \"string\",\n      \"key_1\": 6523.365551027294,\n      \"key_2\": \"string\"\n    }\n  ],\n  \"per_page\": 7551,\n  \"page\": 9688,\n  \"total\": 8092,\n  \"links\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4b54f4d6-8ae5-4ec4-847f-5f2c706bf71a",
+          "name": "Bulk add contacts to a list",
+          "request": {
+            "name": "Bulk add contacts to a list",
+            "description": {},
+            "url": {
+              "path": [
+                "contact_lists",
+                ":contact_list_id",
+                "contacts",
+                "bulk"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "contact_list_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contacts\": [\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\"\n    },\n    {\n      \"id\": \"<string>\",\n      \"first_name\": \"<string>\",\n      \"last_name\": \"<string>\",\n      \"email\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "fb3ca327-021f-471a-9d56-767cbeb523d9",
+              "name": "Bulk add result",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "contact_lists",
+                    ":contact_list_id",
+                    "contacts",
+                    "bulk"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "contact_list_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"contacts\": [\n    {\n      \"id\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"email\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"first_name\": \"string\",\n      \"last_name\": \"string\",\n      \"email\": \"string\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.surveymonkey.com/v3",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "surveys_read surveys_write responses_read responses_write contacts_read contacts_write users_read"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://api.surveymonkey.com/oauth/token"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://api.surveymonkey.com/oauth/authorize"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "229e165a-766c-4898-95ab-48e3a4d94090",
+    "name": "SurveyMonkey API v3 Collectors Contacts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.\n\nContact Support:\n Name: SurveyMonkey API documentation",
+      "type": "text/plain"
+    }
+  }
+}

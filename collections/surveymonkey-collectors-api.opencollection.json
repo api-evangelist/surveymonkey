@@ -1,0 +1,89 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SurveyMonkey API v3 Collectors API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.surveymonkey.com/oauth/authorize",
+      "accessTokenUrl": "https://api.surveymonkey.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Collectors",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List collectors for a survey",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/surveys/:survey_id/collectors",
+            "params": [
+              {
+                "name": "survey_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List collectors for a survey"
+        },
+        {
+          "info": {
+            "name": "Send a collector invitation message",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/collectors/:collector_id/messages/:message_id/send",
+            "params": [
+              {
+                "name": "collector_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "message_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Send a collector invitation message"
+        },
+        {
+          "info": {
+            "name": "List collector recipients",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/collectors/:collector_id/recipients",
+            "params": [
+              {
+                "name": "collector_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List collector recipients"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

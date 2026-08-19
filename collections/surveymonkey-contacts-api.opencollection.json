@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "SurveyMonkey API v3 Collectors Contacts API",
+    "version": "3.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://api.surveymonkey.com/oauth/authorize",
+      "accessTokenUrl": "https://api.surveymonkey.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Contacts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List contact lists",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/contact_lists"
+          },
+          "docs": "List contact lists"
+        },
+        {
+          "info": {
+            "name": "List contacts within a contact list",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.surveymonkey.com/v3/contact_lists/:contact_list_id/contacts",
+            "params": [
+              {
+                "name": "contact_list_id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List contacts within a contact list"
+        },
+        {
+          "info": {
+            "name": "Bulk add contacts to a list",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.surveymonkey.com/v3/contact_lists/:contact_list_id/contacts/bulk",
+            "params": [
+              {
+                "name": "contact_list_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Bulk add contacts to a list"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
