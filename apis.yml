@@ -27,6 +27,13 @@ tags:
   - Feedback
   - NPS
   - Forms
+  - Authentication
+tags_raw:
+  - Surveys
+  - Market Research
+  - Feedback
+  - NPS
+  - Forms
   - OAuth
 created: '2026-05-08'
 modified: '2026-05-30'
@@ -78,6 +85,8 @@ apis:
   humanURL: https://api.surveymonkey.com/v3/docs
   baseURL: https://api.surveymonkey.com/v3
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -158,6 +167,8 @@ apis:
   humanURL: https://api.surveymonkey.com/v3/docs
   baseURL: https://api.surveymonkey.com/v3
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
