@@ -7,6 +7,17 @@ description: >-
   API v3 is a REST API exposing surveys, pages, questions, collectors, contacts,
   responses, webhooks, users, teams, groups and benchmarks. Authenticated via
   OAuth 2.0 with scoped permissions.
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
