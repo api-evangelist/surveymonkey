@@ -192,16 +192,16 @@ apis:
     url: asyncapi/surveymonkey-asyncapi.yml
   - type: SDKs
     url: https://github.com/SurveyMonkey
-- aid: surveymonkey:surveymonkey-workgroups-api
-  name: SurveyMonkey Workgroups API
-  description: The Workgroups API from SurveyMonkey — 2 operation(s) for workgroups.
+- aid: surveymonkey:surveymonkey-work-groups-api
+  name: SurveyMonkey Work Groups API
+  description: The Work Groups API from SurveyMonkey — 2 operation(s) for work groups.
   humanURL: https://api.surveymonkey.com/v3/docs
   baseURL: https://api.surveymonkey.com/v3
   tags:
-  - Workgroups
+  - Work Groups
   properties:
   - type: OpenAPI
-    url: openapi/surveymonkey-workgroups-api-openapi.yml
+    url: openapi/surveymonkey-work-groups-api-openapi.yml
   - type: Documentation
     url: https://api.surveymonkey.com/v3/docs
   - type: Authentication
