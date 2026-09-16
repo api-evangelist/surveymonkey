@@ -2,11 +2,9 @@ aid: surveymonkey
 url: https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/main/apis.yml
 name: SurveyMonkey
 kind: company
-description: >-
-  SurveyMonkey is a leading surveys and feedback platform. The SurveyMonkey
-  API v3 is a REST API exposing surveys, pages, questions, collectors, contacts,
-  responses, webhooks, users, teams, groups and benchmarks. Authenticated via
-  OAuth 2.0 with scoped permissions.
+description: SurveyMonkey is a leading surveys and feedback platform. The SurveyMonkey API v3 is a REST
+  API exposing surveys, pages, questions, collectors, contacts, responses, webhooks, users, teams, groups
+  and benchmarks. Authenticated via OAuth 2.0 with scoped permissions.
 deliveryModel:
   model: unknown
   open_source: false
@@ -33,21 +31,21 @@ accessModel:
   method: derived
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/surveymonkey.png
 tags:
-  - Surveys
-  - Market Research
-  - Feedback
-  - NPS
-  - Forms
-  - Authentication
+- Surveys
+- Market Research
+- Feedback
+- NPS
+- Forms
+- Authentication
 tags_raw:
-  - Surveys
-  - Market Research
-  - Feedback
-  - NPS
-  - Forms
-  - OAuth
+- Surveys
+- Market Research
+- Feedback
+- NPS
+- Forms
+- OAuth
 created: '2026-05-08'
-modified: '2026-05-30'
+modified: '2026-09-16'
 specificationVersion: '0.23'
 apis:
 - aid: surveymonkey:surveymonkey-collectors-api
@@ -215,37 +213,20 @@ apis:
   - type: SDKs
     url: https://github.com/SurveyMonkey
 common:
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/surveymonkey
-  - type: Website
-    url: https://www.surveymonkey.com/
-  - type: Documentation
-    url: https://api.surveymonkey.com/v3/docs
-  - type: Pricing
-    url: https://www.surveymonkey.com/pricing/
-  - type: GitHub
-    url: https://github.com/SurveyMonkey
-  - type: StatusPage
-    url: https://status.surveymonkey.com/
-  - type: Plans
-    url: plans/surveymonkey-plans-pricing.yml
-  - type: RateLimits
-    url: rate-limits/surveymonkey-rate-limits.yml
-  - type: FinOps
-    url: finops/surveymonkey-finops.yml
+- type: Website
+  url: https://surveymonkey.com
+- type: AgenticAccess
+  url: agentic-access/surveymonkey-agentic-access.yml
+- type: TrustCenter
+  url: security/surveymonkey-trust-center.yml
+- type: DomainSecurity
+  url: security/surveymonkey-domain-security.yml
+- type: Authentication
+  url: authentication/surveymonkey-authentication.yml
+- type: OAuthScopes
+  url: scopes/surveymonkey-scopes.yml
+- url: https://www.surveymonkey.com/feed/
+  type: Blog
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
-common:
-  - type: AgenticAccess
-    url: agentic-access/surveymonkey-agentic-access.yml
-  - type: TrustCenter
-    url: security/surveymonkey-trust-center.yml
-  - type: DomainSecurity
-    url: security/surveymonkey-domain-security.yml
-  - type: Authentication
-    url: authentication/surveymonkey-authentication.yml
-  - type: OAuthScopes
-    url: scopes/surveymonkey-scopes.yml
-  - url: https://www.surveymonkey.com/feed/
-    type: Blog
+- FN: Kin Lane
+  email: kin@apievangelist.com
