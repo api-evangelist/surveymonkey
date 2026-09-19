@@ -198,6 +198,8 @@ apis:
   humanURL: https://api.surveymonkey.com/v3/docs
   baseURL: https://api.surveymonkey.com/v3
   tags:
+  - Workgroups
+  tags_raw:
   - Work Groups
   properties:
   - type: OpenAPI
