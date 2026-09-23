@@ -1,0 +1,1 @@
+{"resource":"https://mcp.surveymonkey.com","authorization_servers":["https://mcp.surveymonkey.com"],"scopes_supported":["surveys_read","surveys_write","collectors_write","responses_read","responses_read_detail","users_read"],"bearer_methods_supported":["header"]}

@@ -1,14 +1,7 @@
 {
   "provider": "surveymonkey",
   "sources": [
-    "surveymonkey-collectors-api-openapi.yml",
-    "surveymonkey-contacts-api-openapi.yml",
-    "surveymonkey-groups-api-openapi.yml",
-    "surveymonkey-responses-api-openapi.yml",
-    "surveymonkey-survey-structure-api-openapi.yml",
-    "surveymonkey-surveys-api-openapi.yml",
-    "surveymonkey-users-api-openapi.yml",
-    "surveymonkey-workgroups-api-openapi.yml"
+    "_original/surveymonkey-openapi.yml"
   ],
   "outputs": [
     "surveymonkey-collectors-api-openapi.yml",
@@ -20,9 +13,25 @@
     "surveymonkey-users-api-openapi.yml",
     "surveymonkey-workgroups-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "surveymonkey-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "superseded outputs removed: surveymonkey-work-groups-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 8 total)"
+  ],
+  "skipped": [
+    "surveymonkey-collectors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "surveymonkey-contacts-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "surveymonkey-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "surveymonkey-responses-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "surveymonkey-survey-structure-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "surveymonkey-surveys-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "surveymonkey-users-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "surveymonkey-work-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

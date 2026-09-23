@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: SurveyMonkey API v3 Collectors Survey Structure API
+  title: SurveyMonkey API v3 Survey Structure API
   description: SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.
   version: 3.0.0
   contact:
@@ -112,19 +112,6 @@ paths:
                 $ref: '#/components/schemas/Question'
 components:
   schemas:
-    Page:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        position:
-          type: integer
-        question_count:
-          type: integer
     Collection:
       type: object
       properties:
@@ -161,6 +148,19 @@ components:
             properties:
               heading:
                 type: string
+    Page:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        position:
+          type: integer
+        question_count:
+          type: integer
   securitySchemes:
     oauth2:
       type: oauth2

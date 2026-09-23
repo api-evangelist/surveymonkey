@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: SurveyMonkey API v3 Collectors Workgroups API
+  title: SurveyMonkey API v3 Workgroups API
   description: SurveyMonkey REST API v3 covering users, groups, workgroups, surveys, survey structure (pages/questions), responses and analytics, collectors, and contacts. Authenticated via OAuth 2.0 access tokens passed as Bearer tokens.
   version: 3.0.0
   contact:
@@ -12,12 +12,12 @@ servers:
 security:
 - oauth2: []
 tags:
-- name: Workgroups
+- name: Work Groups
 paths:
   /workgroups:
     get:
       tags:
-      - Workgroups
+      - Work Groups
       summary: List workgroups
       operationId: listWorkgroups
       responses:
@@ -29,7 +29,7 @@ paths:
                 $ref: '#/components/schemas/Collection'
     post:
       tags:
-      - Workgroups
+      - Work Groups
       summary: Create workgroup
       operationId: createWorkgroup
       requestBody:
@@ -54,7 +54,7 @@ paths:
         type: string
     get:
       tags:
-      - Workgroups
+      - Work Groups
       summary: Get workgroup details
       operationId: getWorkgroup
       responses:
@@ -66,7 +66,7 @@ paths:
                 $ref: '#/components/schemas/Workgroup'
     patch:
       tags:
-      - Workgroups
+      - Work Groups
       summary: Update workgroup
       operationId: updateWorkgroup
       requestBody:
@@ -84,6 +84,15 @@ paths:
                 $ref: '#/components/schemas/Workgroup'
 components:
   schemas:
+    Workgroup:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
     Collection:
       type: object
       properties:
@@ -102,15 +111,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    Workgroup:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
