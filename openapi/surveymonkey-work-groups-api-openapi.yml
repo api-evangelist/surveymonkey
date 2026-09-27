@@ -84,15 +84,6 @@ paths:
                 $ref: '#/components/schemas/Workgroup'
 components:
   schemas:
-    Workgroup:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
     Collection:
       type: object
       properties:
@@ -111,6 +102,15 @@ components:
           type: object
           additionalProperties:
             type: string
+    Workgroup:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
   securitySchemes:
     oauth2:
       type: oauth2

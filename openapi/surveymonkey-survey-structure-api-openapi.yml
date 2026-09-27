@@ -130,6 +130,19 @@ components:
           type: object
           additionalProperties:
             type: string
+    Page:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        description:
+          type: string
+        position:
+          type: integer
+        question_count:
+          type: integer
     Question:
       type: object
       properties:
@@ -148,19 +161,6 @@ components:
             properties:
               heading:
                 type: string
-    Page:
-      type: object
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        description:
-          type: string
-        position:
-          type: integer
-        question_count:
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2
