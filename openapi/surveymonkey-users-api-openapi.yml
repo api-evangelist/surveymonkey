@@ -67,6 +67,21 @@ paths:
                 $ref: '#/components/schemas/Collection'
 components:
   schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        username:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
+        account_type:
+          type: string
     Collection:
       type: object
       properties:
@@ -85,21 +100,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    User:
-      type: object
-      properties:
-        id:
-          type: string
-        username:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        email:
-          type: string
-        account_type:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2
