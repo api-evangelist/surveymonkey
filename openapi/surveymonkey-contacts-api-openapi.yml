@@ -74,6 +74,17 @@ paths:
           description: Bulk add result
 components:
   schemas:
+    Contact:
+      type: object
+      properties:
+        id:
+          type: string
+        first_name:
+          type: string
+        last_name:
+          type: string
+        email:
+          type: string
     Collection:
       type: object
       properties:
@@ -92,17 +103,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    Contact:
-      type: object
-      properties:
-        id:
-          type: string
-        first_name:
-          type: string
-        last_name:
-          type: string
-        email:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

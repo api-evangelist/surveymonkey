@@ -127,6 +127,15 @@ components:
           type: object
           additionalProperties:
             type: string
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        member_count:
+          type: integer
     Member:
       type: object
       properties:
@@ -138,15 +147,6 @@ components:
           type: string
         status:
           type: string
-    Group:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        member_count:
-          type: integer
   securitySchemes:
     oauth2:
       type: oauth2
