@@ -1,0 +1,36 @@
+slug: surveymonkey
+provider: SurveyMonkey
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Responses
+  spec_file: surveymonkey-responses-api-openapi.yml
+  capability_id: BC-430.50
+  capability_id_l1: BC-430
+  capability_name: Customer Feedback Management
+  confidence: 0.8
+  evidence: GET /surveys/{survey_id}/responses  listSurveyResponses; GET /surveys/{survey_id}/rollups  Response
+    counts (rollups); GET /surveys/{survey_id}/trends  Response trends
+  reason: Retrieving and aggregating survey responses with rollups and trends is exactly the collection
+    and analysis of survey/voice-of-customer feedback. Clear capability; slight residual ambiguity on
+    whether it serves customer feedback or broader market research.
+- tag: Surveys
+  spec_file: surveymonkey-surveys-api-openapi.yml
+  capability_id: BC-430.50
+  capability_id_l1: BC-430
+  capability_name: Customer Feedback Management
+  confidence: 0.8
+  evidence: 'POST /surveys  createSurvey  Create survey; GET /surveys  listSurveys; schemas: Survey'
+  reason: Creating and managing surveys on a feedback platform directly realises survey / voice-of-customer
+    programme management. Minor ambiguity only over whether the surveys serve customer feedback or market
+    research.
