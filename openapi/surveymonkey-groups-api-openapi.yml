@@ -109,6 +109,26 @@ paths:
                 $ref: '#/components/schemas/Member'
 components:
   schemas:
+    Member:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+        role:
+          type: string
+        status:
+          type: string
+    Group:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        member_count:
+          type: integer
     Collection:
       type: object
       properties:
@@ -127,26 +147,6 @@ components:
           type: object
           additionalProperties:
             type: string
-    Group:
-      type: object
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-        member_count:
-          type: integer
-    Member:
-      type: object
-      properties:
-        id:
-          type: string
-        email:
-          type: string
-        role:
-          type: string
-        status:
-          type: string
   securitySchemes:
     oauth2:
       type: oauth2

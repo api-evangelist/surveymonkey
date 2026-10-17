@@ -112,6 +112,24 @@ paths:
                 $ref: '#/components/schemas/Question'
 components:
   schemas:
+    Collection:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        per_page:
+          type: integer
+        page:
+          type: integer
+        total:
+          type: integer
+        links:
+          type: object
+          additionalProperties:
+            type: string
     Page:
       type: object
       properties:
@@ -143,24 +161,6 @@ components:
             properties:
               heading:
                 type: string
-    Collection:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
-        per_page:
-          type: integer
-        page:
-          type: integer
-        total:
-          type: integer
-        links:
-          type: object
-          additionalProperties:
-            type: string
   securitySchemes:
     oauth2:
       type: oauth2

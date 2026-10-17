@@ -84,24 +84,6 @@ paths:
                 $ref: '#/components/schemas/Collection'
 components:
   schemas:
-    Collection:
-      type: object
-      properties:
-        data:
-          type: array
-          items:
-            type: object
-            additionalProperties: true
-        per_page:
-          type: integer
-        page:
-          type: integer
-        total:
-          type: integer
-        links:
-          type: object
-          additionalProperties:
-            type: string
     Survey:
       type: object
       properties:
@@ -128,6 +110,24 @@ components:
         href:
           type: string
           format: uri
+    Collection:
+      type: object
+      properties:
+        data:
+          type: array
+          items:
+            type: object
+            additionalProperties: true
+        per_page:
+          type: integer
+        page:
+          type: integer
+        total:
+          type: integer
+        links:
+          type: object
+          additionalProperties:
+            type: string
   securitySchemes:
     oauth2:
       type: oauth2
