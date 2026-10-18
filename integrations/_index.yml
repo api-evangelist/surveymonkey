@@ -107,7 +107,7 @@
     - generally_available
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: surveymonkey-fivetran
   label: Fivetran
@@ -133,7 +133,7 @@
     - connectors/applications/surveymonkey
     vendor_link: https://www.surveymonkey.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: surveymonkey-meltano
   label: Meltano
@@ -172,7 +172,7 @@
     - silver
     - unknown
     builder: 'community (Meltano Hub variant maintainers: airbyte, danladd, horze-international, ichensvmk, mikedillion)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
 - slug: surveymonkey-google-workspace-own
   label: Google Workspace (own)
