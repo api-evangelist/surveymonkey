@@ -241,6 +241,1128 @@ edges:
     builder: Pipedream repo (component)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
+- partner_name: ActiveCampaign
+  app: ActiveCampaign
+  partner: activecampaign
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/LFfgPy2H6CmoGcTfZm_2Bryw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: ActiveCampaign
+    matched_domain: activecampaign.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - ActiveCampaign
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Airbyte Cloud
+  app: Airbyte Cloud
+  partner: airbyte
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/NKI5TOTqk4tS5BZyJXU9YQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Airbyte Cloud
+    matched_domain: airbyte.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Airbyte Cloud
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Apptio Inc
+  app: Apptio Cloudability SaaS
+  partner: apptio
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/0tISfGS2KscU8NBuZzCWcw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Apptio Inc
+    matched_domain: apptio.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Apptio Cloudability SaaS
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Azuqua, Inc.
+  app: Azuqua
+  partner: azuqua
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/nfzc4i7EXYbSqVjw_2B3HNhg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Azuqua, Inc.
+    matched_domain: azuqua.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Azuqua
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Benchmarkemail.com
+  app: Benchmarkemail
+  partner: benchmark-email
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/xno_2BwtjttnPbGBmEneR5Mg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Benchmarkemail.com
+    matched_domain: benchmarkemail.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Benchmarkemail
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: BigID Developer
+  app: BigID.me
+  partner: bigid
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/g8lICaSw_2F9OnrqO7fmRzjw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: BigID Developer
+    matched_domain: bigid.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - BigID.me
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: CData Software
+  app: CData Cloud Connector
+  partner: cdata
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/4HMOMlmCgft0g3PeBtDIFQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: CData Software
+    matched_domain: cdata.com
+    matched_by: domain
+    listings: 2
+    sample_apps:
+    - CData Cloud Connector
+    - CData Data Connectors
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Clarabridge
+  app: Clarabridge
+  partner: clarabridge
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/W5VKBTF8WtXVTg6oEd8dCA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Clarabridge
+    matched_domain: clarabridge.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Clarabridge
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Constant Contact
+  app: Constant Contact
+  partner: constant-contact
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/sMG9kYyRHI1pBSkoRChs_2FA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Constant Contact
+    matched_domain: constantcontact.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Constant Contact
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Crowdin OÜ
+  app: Crowdin
+  partner: crowdin
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/TkOFl7MDEZa8l2Ijuw9tNg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Crowdin OÜ
+    matched_domain: crowdin.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Crowdin
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: DataGrail
+  app: DataGrail
+  partner: datagrail
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/pw53ECDx1G498G_2BnHtLKUA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: DataGrail
+    matched_domain: datagrail.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - DataGrail
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Domo, Inc
+  app: Domo, Inc
+  partner: domo
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/sMr5VTPklTvaz331BoSXhg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Domo, Inc
+    matched_domain: domo.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Domo, Inc
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Enterpret Inc.
+  app: Enterpret
+  partner: enterpret
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/wK7PyMjt4QE7516EZ4CVGQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Enterpret Inc.
+    matched_domain: enterpret.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Enterpret
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Estuary
+  app: Estuary
+  partner: estuary
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/l5dSWDj_2Ft2Llakzb3QZkmg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Estuary
+    matched_domain: estuary.dev
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Estuary
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Fivetran, Inc.
+  app: Fivetran
+  partner: fivetran
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/KIzLaq6POEx6ELphpiSDPw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Fivetran, Inc.
+    matched_domain: fivetran.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Fivetran
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Freshworks
+  app: Freshdesk
+  partner: freshworks
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/1Dvui72_2BkDMCzcr_2BfPqzPg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Freshworks
+    matched_domain: freshworks.com
+    matched_by: domain+name-among-holders
+    listings: 2
+    sample_apps:
+    - Freshdesk
+    - Freshteam
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Gainsight
+  app: Gainsight
+  partner: gainsight
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/eRYI3epJci2yjr5LPoZr7g_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Gainsight
+    matched_domain: gainsight.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Gainsight
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Greenspark
+  app: Greenspark
+  partner: greenspark
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/n7YVV5zpsp8icvqdj56orw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Greenspark
+    matched_domain: getgreenspark.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Greenspark
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: CompanyHub
+  app: Integrately
+  partner: integrately
+  partner_match: domain+product
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/KlLq65DjJTr_2BcPE1H_2B0bsw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: CompanyHub
+    matched_domain: integrately.com
+    matched_by: domain+product
+    listings: 1
+    sample_apps:
+    - Integrately
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Integry Solutions
+  app: Integry Connector
+  partner: integry
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/W2yOE7S_2BsRWM2x7ACKIVFQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Integry Solutions
+    matched_domain: integry.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Integry Connector
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Ketch
+  app: Ketch Privacy App
+  partner: ketch-io
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/S5Djxtopv2K_2FQmGiwnX1rg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Ketch
+    matched_domain: ketch.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Ketch Privacy App
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Latenode
+  app: Latenode
+  partner: latenode
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/IIxLHGJXmjTt19sncK5uiQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Latenode
+    matched_domain: latenode.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Latenode
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Mailchimp
+  app: 'Mailchimp '
+  partner: mailchimp
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/Ngns3_2FrCgJPilm6u_2F7u2mA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Mailchimp
+    matched_domain: mailchimp.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - 'Mailchimp '
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Make
+  app: Make
+  partner: make
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: ipaas-bridge
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/iq75vWMASZnPb2xjPe2g_2FA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Make
+    matched_domain: make.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Make
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Matillion
+  app: Matillion Data Productivity Cloud
+  partner: matillion
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/H7GClHy8vQKwJmPmNdPvfg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Matillion
+    matched_domain: matillion.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Matillion Data Productivity Cloud
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Meltano
+  app: Meltano SurveyMonkey Connector
+  partner: meltano
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/6yneivW_2B3fJv6G0jPxx_2FYQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Meltano
+    matched_domain: meltano.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Meltano SurveyMonkey Connector
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: PlusThis
+  app: PlusThis
+  partner: plusthis
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/3mTNGOGm7lyqHNf45KdHug_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: PlusThis
+    matched_domain: plusthis.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - PlusThis
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Productiv
+  app: Productiv
+  partner: productiv
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/E1Ps9MWOP2Qx3HOmZsKloA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Productiv
+    matched_domain: productiv.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Productiv
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Reforge
+  app: Reforge Insight Analytics
+  partner: reforge
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/vIZyCT_2BCOe1BPSYfOb87ig_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Reforge
+    matched_domain: reforge.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Reforge Insight Analytics
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Remind
+  app: Remind
+  partner: remind
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/kLxdln9smkGBeFfyHUyTlQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Remind
+    matched_domain: remind.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Remind
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: BHN Rewards
+  app: BHN Rewards (formerly Rybbon)
+  partner: rybbon
+  partner_match: domain+product
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/uBPaRmGQB_2BtfVDkihg2ECQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: BHN Rewards
+    matched_domain: bhnrewards.com
+    matched_by: domain+product
+    listings: 1
+    sample_apps:
+    - BHN Rewards (formerly Rybbon)
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Sendoso
+  app: Sendoso
+  partner: sendoso
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/EDmrTxQorVzW70pkbi3Vmg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Sendoso
+    matched_domain: sendoso.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Sendoso
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Skyvia
+  app: Skyvia
+  partner: skyvia
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/0pJJaYOkdxZCvyc8_2FLAThA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Skyvia
+    matched_domain: skyvia.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Skyvia
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Transcend Inc
+  app: Transcend
+  partner: transcend-io
+  partner_match: domain+product
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/eNRUXl7nPijka3NzOCM1mg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Transcend Inc
+    matched_domain: transcend.io
+    matched_by: domain+product
+    listings: 1
+    sample_apps:
+    - Transcend
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Tremendous Rewards
+  app: Tremendous
+  partner: tremendous
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/LxlzqR983QQ3csT4_2BkM_2FHA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Tremendous Rewards
+    matched_domain: tremendous.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Tremendous
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Truto
+  app: Truto
+  partner: truto
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/q4Gn8UovoXQVBU3XmpwZOQ_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Truto
+    matched_domain: truto.one
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Truto
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Unito
+  app: Unito
+  partner: unito
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/QHdiB4forc74JPEQyilz_2Bw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Unito
+    matched_domain: unito.io
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Unito
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: unitQ Inc.
+  app: unitQ
+  partner: unitq
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/bNP0DmqWhVML8_2Fty3YIL3A_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: unitQ Inc.
+    matched_domain: unitq.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - unitQ
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Cisco Webex Teams
+  app: Cisco Webex Teams
+  partner: webex
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/qo1NXGN_2BsrBblcW5MqS9xA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Cisco Webex Teams
+    matched_domain: webex.com
+    matched_by: domain+name-among-holders
+    listings: 1
+    sample_apps:
+    - Cisco Webex Teams
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Xoxoday
+  app: Xoxoday Plum
+  partner: xoxoday
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/PpncRwEWmTSVHq0K14gafg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Xoxoday
+    matched_domain: xoxoday.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Xoxoday Plum
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Y42
+  app: Y42
+  partner: y42
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/mHEZzq9OZuJKCfDdhX7YAg_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Y42
+    matched_domain: y42.com
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Y42
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Zoho Corporation Pvt. Ltd.
+  app: Zoho Campaigns
+  partner: zoho
+  partner_match: domain+name-among-holders
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/2aZWIKb8V9EiIOhyLt7AlA_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Zoho Corporation Pvt. Ltd.
+    matched_domain: zoho.com
+    matched_by: domain+name-among-holders
+    listings: 3
+    sample_apps:
+    - Zoho Analytics
+    - Zoho CRM
+    - Zoho Campaigns
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
+- partner_name: Zuper Inc
+  app: Zuper
+  partner: zuper
+  partner_match: domain
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://www.surveymonkey.com/apps/jKgyZqt4LtkHQSn9xwMMDw_3D_3D/details/
+  category: null
+  contract_reference:
+    register: SurveyMonkey App Directory (surveymonkey.com/apps graphql id list -> details pages' gqlCache)
+    spec_file: null
+    role: surveymonkey-app
+    registered_name: Zuper Inc
+    matched_domain: zuper.co
+    matched_by: domain
+    listings: 1
+    sample_apps:
+    - Zuper
+    signal_note: one edge per (builder, platform); listings and badges are context, never read
+    detected_by: sweep-surveys-research.py
+    detected: '2026-10-20'
+  detected_by: sweep-surveys-research.py
+  detected: '2026-10-20'
 method: searched
 checked:
 - google-workspace/integrations/google-workspace-integration-edges.yml
@@ -257,7 +1379,18 @@ checked:
 - microsoft-teams/integrations/microsoft-teams-integration-edges.yml
 - slack/integrations/slack-integration-edges.yml
 - zoom/integrations/zoom-integration-edges.yml
+- https://www.surveymonkey.com/apps/
+- https://www.surveymonkey.com/graphql
 source:
 - https://github.com/PipedreamHQ/pipedream/tree/94800dd6de6640b942c65ea7ee655f71ac56d438/components/
 - https://github.com/n8n-io/n8n/tree/860f1273ebd73fabbd668cbec2c49ed9b48a286d/packages/nodes-base/nodes/
 - https://zapier.com/api/v4/apps/
+marketplace_apps:
+- marketplace: own
+  channel: partner-built
+  app: surveymonkey
+  url: https://www.surveymonkey.com/apps/
+  app_count: 239
+  adapter: sweep-surveys-research.py:graphql-ids+details-gqlCache
+  listed: 43
+  note: 239 listings read; only linked builders are written
