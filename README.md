@@ -1,4 +1,4 @@
-# SurveyMonkey (surveymonkey)
+# SurveyMonkey
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,63 +66,174 @@
 
 SurveyMonkey is a leading surveys and feedback platform. The SurveyMonkey API v3 is a REST API exposing surveys, pages, questions, collectors, contacts, responses, webhooks, users, teams, groups and benchmarks. Authenticated via OAuth 2.0 with scoped permissions.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/surveymonkey/refs/heads/main/apis.yml)
+**Areas:** Surveys · Market Research · Feedback · NPS · Forms · Authentication
 
-## Tags
+## SurveyMonkey on APIs.io
 
-- Surveys
-- Market Research
-- Feedback
-- NPS
-- Forms
-- OAuth
+Everything profiled for SurveyMonkey is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/surveymonkey/](https://apis.io/providers/surveymonkey/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (8)
 
-- **Created:** 2026-05-08
-- **Modified:** 2026-05-30
+- [SurveyMonkey Collectors API](https://apis.io/apis/surveymonkey/surveymonkey-collectors-api/) — The Collectors API from SurveyMonkey — 3 operation(s) for collectors.
+- [SurveyMonkey Contacts API](https://apis.io/apis/surveymonkey/surveymonkey-contacts-api/) — The Contacts API from SurveyMonkey — 3 operation(s) for contacts.
+- [SurveyMonkey Groups API](https://apis.io/apis/surveymonkey/surveymonkey-groups-api/) — The Groups API from SurveyMonkey — 4 operation(s) for groups.
+- [SurveyMonkey Responses API](https://apis.io/apis/surveymonkey/surveymonkey-responses-api/) — The Responses API from SurveyMonkey — 4 operation(s) for responses.
+- [SurveyMonkey Survey Structure API](https://apis.io/apis/surveymonkey/surveymonkey-survey-structure-api/) — The Survey Structure API from SurveyMonkey — 4 operation(s) for survey structure.
+- [SurveyMonkey Surveys API](https://apis.io/apis/surveymonkey/surveymonkey-surveys-api/) — The Surveys API from SurveyMonkey — 3 operation(s) for surveys.
+- [SurveyMonkey Users API](https://apis.io/apis/surveymonkey/surveymonkey-users-api/) — The Users API from SurveyMonkey — 3 operation(s) for users.
+- [SurveyMonkey Work Groups API](https://apis.io/apis/surveymonkey/surveymonkey-work-groups-api/) — The Work Groups API from SurveyMonkey — 2 operation(s) for work groups.
 
-## APIs
+### Published properties
 
-### SurveyMonkey API v3
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST/JSON API for the SurveyMonkey platform — surveys, pages, questions, collectors, contacts, responses, webhooks, users, teams. Three-step OAuth 2.0 flow; scope-based permissions; some scopes require paid plans.
+#### AsyncAPI (1)
 
-- **Human URL:** [https://api.surveymonkey.com/v3/docs](https://api.surveymonkey.com/v3/docs)
-- **Base URL:** `https://api.surveymonkey.com/v3`
+Event-driven and webhook contracts.
 
-#### Tags
+- [SurveyMonkey Webhooks](https://apis.io/asyncapis/surveymonkey/surveymonkey-asyncapi/)
 
-- REST
-- OAuth 2.0
-- Surveys
-- Responses
-- Webhooks
+#### Event channels (14)
 
-#### Properties
+Individual events and webhooks the provider emits.
 
-- [Documentation](https://api.surveymonkey.com/v3/docs)
-- [Authentication](https://api.surveymonkey.com/v3/docs#authentication)
-- [Webhooks](https://api.surveymonkey.com/v3/docs#api-endpoint-webhooks)
-- [OpenAPI](openapi/surveymonkey-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/surveymonkey.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/surveymonkey.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [AsyncAPI](asyncapi/surveymonkey-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
-- [SDK](https://github.com/SurveyMonkey)
+- [webhook/app_installed](https://apis.io/channels/surveymonkey/webhook-app-installed/)
+- [webhook/app_uninstalled](https://apis.io/channels/surveymonkey/webhook-app-uninstalled/)
+- [webhook/collector_created](https://apis.io/channels/surveymonkey/webhook-collector-created/)
+- [webhook/collector_deleted](https://apis.io/channels/surveymonkey/webhook-collector-deleted/)
+- [webhook/collector_updated](https://apis.io/channels/surveymonkey/webhook-collector-updated/)
+- [webhook/response_completed](https://apis.io/channels/surveymonkey/webhook-response-completed/)
+- [webhook/response_created](https://apis.io/channels/surveymonkey/webhook-response-created/)
+- [webhook/response_deleted](https://apis.io/channels/surveymonkey/webhook-response-deleted/)
+- [webhook/response_disqualified](https://apis.io/channels/surveymonkey/webhook-response-disqualified/)
+- [webhook/response_overquota](https://apis.io/channels/surveymonkey/webhook-response-overquota/)
+- [webhook/response_updated](https://apis.io/channels/surveymonkey/webhook-response-updated/)
+- [webhook/survey_created](https://apis.io/channels/surveymonkey/webhook-survey-created/)
+- [webhook/survey_deleted](https://apis.io/channels/surveymonkey/webhook-survey-deleted/)
+- [webhook/survey_updated](https://apis.io/channels/surveymonkey/webhook-survey-updated/)
 
-## Common Properties
+#### MCP servers (1)
 
-- [LinkedIn](https://www.linkedin.com/company/surveymonkey)
-- [Website](https://www.surveymonkey.com/)
-- [Documentation](https://api.surveymonkey.com/v3/docs)
-- [Pricing](https://www.surveymonkey.com/pricing/)
-- [Git Hub](https://github.com/SurveyMonkey)
-- [Status Page](https://status.surveymonkey.com/)
-- [Plans](plans/surveymonkey-plans-pricing.yml)
-- [Rate Limits](rate-limits/surveymonkey-rate-limits.yml)
-- [Fin Ops](finops/surveymonkey-finops.yml)
+Model Context Protocol servers that expose the API to agents.
 
-## Maintainers
+- [surveymonkey](https://apis.io/servers/surveymonkey/surveymonkey/)
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Surveymonkey Agentic Access](https://apis.io/agentic-access/surveymonkey/surveymonkey-agentic-access/)
+
+#### Collections (9)
+
+Postman and Open Collection request collections.
+
+- [SurveyMonkey API v3](https://apis.io/collections/surveymonkey/open-surveymonkey/)
+- [SurveyMonkey API v3 Collectors API](https://apis.io/collections/surveymonkey/open-surveymonkey-collectors-api/)
+- [SurveyMonkey API v3 Collectors Contacts API](https://apis.io/collections/surveymonkey/open-surveymonkey-contacts-api/)
+- [SurveyMonkey API v3 Collectors Groups API](https://apis.io/collections/surveymonkey/open-surveymonkey-groups-api/)
+- [SurveyMonkey API v3 Collectors Responses API](https://apis.io/collections/surveymonkey/open-surveymonkey-responses-api/)
+- [SurveyMonkey API v3 Collectors Survey Structure API](https://apis.io/collections/surveymonkey/open-surveymonkey-survey-structure-api/)
+- [SurveyMonkey API v3 Collectors Surveys API](https://apis.io/collections/surveymonkey/open-surveymonkey-surveys-api/)
+- [SurveyMonkey API v3 Collectors Users API](https://apis.io/collections/surveymonkey/open-surveymonkey-users-api/)
+- [SurveyMonkey API v3 Collectors Workgroups API](https://apis.io/collections/surveymonkey/open-surveymonkey-workgroups-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [SurveyMonkey — asyncapi rules](https://apis.io/rules/surveymonkey/surveymonkey-asyncapi-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Surveymonkey Authentication](https://apis.io/security/surveymonkey/surveymonkey-authentication/)
+- [Surveymonkey Domain Security](https://apis.io/security/surveymonkey/surveymonkey-domain-security/)
+- [Surveymonkey Trust Center](https://apis.io/security/surveymonkey/surveymonkey-trust-center/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Surveymonkey Scopes](https://apis.io/scopes/surveymonkey/surveymonkey-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Surveymonkey Plans Pricing](https://apis.io/plans/surveymonkey/surveymonkey-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Surveymonkey Rate Limits](https://apis.io/rate-limits/surveymonkey/surveymonkey-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Surveymonkey Finops](https://apis.io/finops/surveymonkey/surveymonkey-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://surveymonkey.com)
+- [Blog](https://www.surveymonkey.com/feed/)
+
+## API Evangelist rating
+
+**Kin Score 33.8** — thin · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 52.8 |
+| Contract governance | 11.4 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 31.0 |
+| Access clarity | 15.8 |
+
+**Agent readiness 46.9** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | paginated |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 26.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/surveymonkey/](https://apis.io/providers/surveymonkey/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for SurveyMonkey: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/surveymonkey/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
